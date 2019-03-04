@@ -17,6 +17,8 @@
 \chead{\textsc{University of Edinburgh}}
 \rhead{Honours Algebra}
 
+\sffamily
+
 \title{Honours Algebra Notes}
 \author{Anthony Catterwell}
 
@@ -50,7 +52,7 @@
             \ (\lambda, \mu) \mapsto \lambda + \mu \\
             \text{multiplication} \ &=. : F \times F \to F ; (\lambda, \mu) \mapsto \lambda\mu
         \end{align*}
-        such that $(F, +)$ and $(F \setminus \{0\},.)$ are abelian groups, with
+        such that $(F, +)$ and $(F \ \setminus \{0\},.)$ are abelian groups, with
         \[
             \lambda (\mu + \nu) = \lambda \mu + \lambda \nu \in F, \quad
             \forall \lambda \nu \in F
@@ -81,13 +83,13 @@
         such that for all $\lambda, \mu \in F$ and $\textbf{v}, \textbf{w} \in V$
         the following identities hold:
         \begin{align*}{}
-            \lambda(\textbf{v} + \textbf{w}) &= (\lambda \textbf{v}) + (\lambda \textbf{w})
-            \quad &\text{(distributivity)} \\
-            (\lambda + \mu) \textbf{v} &= (\lambda \textbf{v}) + (\mu \textbf{v})
-            \quad &\text{(distributivity)} \\
-            \lambda(\mu \textbf{v}) &= (\lambda \mu) \textbf{v}
-            \quad &\text{(associativity)} \\
-            1_F\textbf{v} &= \textbf{v}
+            \lambda(\textbf{v} + \textbf{w}) & = (\lambda \textbf{v}) + (\lambda \textbf{w})
+            \quad                            & \text{(distributivity)} \\
+            (\lambda + \mu) \textbf{v}       & = (\lambda \textbf{v}) + (\mu \textbf{v})
+            \quad                            & \text{(distributivity)} \\
+            \lambda(\mu \textbf{v})          & = (\lambda \mu) \textbf{v}
+            \quad                            & \text{(associativity)} \\
+            1_F\textbf{v}                    & = \textbf{v}
         \end{align*}
         A vector space $V$ over a field $F$ is called an $F$-\emph{vector space}.
 
@@ -178,8 +180,8 @@
         The family ${(\textbf{v}_i)}_{1 \leq i \leq r}$ is a basis of $V$ if and only if the
         following ``evaluation'' mapping
         \begin{align*}{}
-            \Phi : F^r &\to V \\
-            (\alpha_1, \ldots, \alpha_r) &\mapsto \alpha\textbf{v}_1 +
+            \Phi : F^r                    & \to V \\
+            (\alpha_1, \ldots, \alpha_r)  & \mapsto \alpha\textbf{v}_1 +
             \cdots + \alpha_r\textbf{v}_r
         \end{align*}
         is a bijection.
@@ -189,7 +191,7 @@
         \begin{enumerate}
             \item $E$ is a basis, i.e.\ a linearly independent generating set;
             \item $E$ is minimal among all generating sets,
-                meaning that $E \setminus \{\textbf{v}\}$ does not generate $V$,
+                meaning that $E \ \setminus \{\textbf{v}\}$ does not generate $V$,
                 $\forall \textbf{v} \in E$;
             \item $E$ is maximal among all linearly independent subsets,
                 meaning that $E \cup \{\textbf{v}\}$ is not linearly independent
@@ -253,15 +255,15 @@
         Let $V$ be a vector space, $L \subset V$ and finite linearly independent subset,
         and $E \subseteq V$ and generating set.
         Then there is an injection $\Phi : L \to E$ such that
-        $(E \setminus \Phi(L)) \cup L$ is also a generating set for $V$.
+        $(E \ \setminus \Phi(L)) \cup L$ is also a generating set for $V$.
 
     \item \textbf{Lemma 1.6.3:} Exchange lemma \\
         Let $V$ be a vector space, $M \subseteq V$ a linearly independent subset,
         and $E \subseteq V$ a generating subset, such that $M \subseteq E$.
-        If $\textbf{w} \in V \setminus M$ is a vector set not belonging to $M$ such that
+        If $\textbf{w} \in V \ \setminus M$ is a vector set not belonging to $M$ such that
         $M \cup \{\textbf{w}\}$ is linearly independent, then there exists
-        $\textbf{e} \in E \setminus M$ such that
-        $\{E \setminus \{\textbf{e}\}\} \cup \{\textbf{w} \}$ is a generating set for $V$.
+        $\textbf{e} \in E \ \setminus M$ such that
+        $\{E \ \setminus \{\textbf{e}\}\} \cup \{\textbf{w} \}$ is a generating set for $V$.
 
     \item \textbf{Corollary 1.6.4:} Cardinality of bases \\
         Let $V$ be a finitely generated vector space.
@@ -306,8 +308,8 @@
         A mapping $f: V \to W$ is called \emph{linear}
         if for all $\textbf{v}_1, \textbf{v}_2 \in V$ and $\lambda \in F$ we have
         \begin{align*}{}
-            f(\textbf{v}_1 + \textbf{v}_2) &= f(\textbf{v}_1) + f(\textbf{v}_2) \\
-            f(\lambda\textbf{v}_1) &= \lambda f(\textbf{v}_1)
+            f(\textbf{v}_1 + \textbf{v}_2) & = f(\textbf{v}_1) + f(\textbf{v}_2) \\
+            f(\lambda\textbf{v}_1)         & = \lambda f(\textbf{v}_1)
         \end{align*}
         A bijective linear mapping is called an \emph{isomorphism} of vector spaces.
         If there is an isomorphism of vector spaces, we call them \emph{isomorphic}.
@@ -337,8 +339,8 @@
         Let $V,W$ be vector spaces over $F$ and let $B \subset V$ be a basis.
         Then restriction of a mapping gives a bijection
         \begin{align*}{}
-            \text{Hom}_F(V,W) &= \text{Hom}(V,W) \subseteq \text{Maps}(V,W) \\
-            f &\mapsto f|_B
+            \text{Hom}_F(V,W) & = \text{Hom}(V,W) \subseteq \text{Maps}(V,W) \\
+            f                 & \mapsto f|_B
         \end{align*}
         In other words, each linear mapping determines and is completely determined by the values
         it takes on a basis.
@@ -433,11 +435,11 @@
         B, B' \in \mathrm{Mat}(m \times l;F), C \in \mathrm{Mat}(l \times k; F)$ and $I = I_m$.
         Then the following hold for matrix multiplication
         \begin{align*}{}
-            (A + A')B &= AB + A'B \\
-            A(B + B') &= AB + AB' \\
-            IB &= B \\
-            AI &= A \\
-            (AB)C &= A(BC)
+            (A + A')B & = AB + A'B \\
+            A(B + B') & = AB + AB' \\
+            IB        & = B \\
+            AI        & = A \\
+            (AB)C     & = A(BC)
         \end{align*}
 \end{itemize}
 
@@ -735,16 +737,16 @@
 
     \item \textbf{Theorem 3.3.10:} \\
         Let $R$ a ring, or more generally, an integral domain.
-        Then an non-zero polynomial $P \in R[X] \setminus \{0\}$ has at most $\deg(P)$ roots in
+        Then an non-zero polynomial $P \in R[X] \ \setminus \{0\}$ has at most $\deg(P)$ roots in
         $R$.
 
     \item \textbf{Definition 3.3.11:} \emph{Algebraically closed} \\
         A field $F$ is \emph{algebraically closed} if each non-constant polynomial
-        $P \in F[X] \setminus F$ with coefficients $F$ has a root in $F$.
+        $P \in F[X] \ \setminus F$ with coefficients $F$ has a root in $F$.
 
     \item \textbf{Theorem 3.3.13:} \emph{Fundamental theorem of algebra} \\
         If $F$ is an algebraically closed field, then every non-zero polynomial
-        $P \in F[X] \setminus \{0\}$ \emph{decomposes into linear factors}
+        $P \in F[X] \ \setminus \{0\}$ \emph{decomposes into linear factors}
         \[
             P = c(X - \lambda_1) \cdots (X - \lambda_n)
         \]
@@ -761,8 +763,8 @@
         A mapping $f : R \to S$ is a \emph{ring homomorphism} if the following hold
         $\forall x,y\in R$
         \begin{align*}{}
-            f(x+y) &= f(x) + f(y) \\
-            f(xy) &= f(x)f(y)
+            f(x+y) & = f(x) + f(y) \\
+            f(xy)  & = f(x)f(y)
         \end{align*}
 
     \item Prelude to ideals \\
@@ -906,7 +908,7 @@
     \item \textbf{Remark} \\
         Suppose that $\sim$ is an equivalence relation on $X$.
         If $f : X \to Z$ is a mapping with the property that $x \sim y \implies f(x) = f(y)$,
-        then there is a unique mapping $\overline{f} : (X \setminus \sim) \to Z$
+        then there is a unique mapping $\overline{f} : (X \ \setminus \sim) \to Z$
         with $f = \overline{f} \circ \mathrm{can}$.
         Its definition is easy: $f(E(x)) = f(x)$.
         This property is called the \emph{universal property of the set of equivalence classes}.
@@ -921,20 +923,41 @@
 
 \begin{itemize}
 
+    \item \textbf{Prelude} \\
+        Let $f : R \to S$ be a ring homomorphism.
+        \[
+            x \sim y \iff f(x) = f(y) \iff f(x-y) = 0 \iff x - y \in \ker f
+        \]
+        Then:
+        \[
+            E(x) = x + \ker f \equiv \{x + k : k \in \ker f \}
+        \]
+        So we have that:
+        \begin{itemize}
+            \item the rule $x \sim y \iff x - y \in \ker f$ is an equivalence relation;
+            \item the equivalence classes are the sets $x + \ker f$ for $x \in R$;
+            \item the set of equivalence classes $(R \ / \sim)$ is a ring,
+                isomorphic to a subring of $S$.
+        \end{itemize}
+
     \item \textbf{Definition 3.6.1:} \emph{Cosets} \\
         Let $I \trianglelefteq R$ be an ideal in a ring $R$.
         The set
         \[
             x+I \equiv \{x + i : i \in I\} \subseteq R
         \]
-        is a \emph{coset of I in $R$}.
+        is a \emph{coset of I in $R$}, or
+        \emph{the coset of $x$ with respect to $I$ in $R$}.
 
     \item \textbf{Definition 3.6.3:} \emph{Factor ring} \\
         Let $R$ be a ring, $I \trianglelefteq R$ be an ideal, and $\sim$ the equivalence relation
         defined by
         $x \sim y \iff x-y \in I$.
         Then $R/I$, the \emph{factor ring of $R$ by $I$} or the \emph{quotient of $R$ by $I$},
-        is the set $(R \setminus \sim)$ of cosets of $I$ in $R$.
+        is the set $(R \ / \sim)$ of cosets of $I$ in $R$.
+        \[
+            R/I = \{r + I : r \in R \}
+        \]
 
     \item \textbf{Theorem 3.6.4:} \\
         Let $R$ be a ring, and $I \trianglelefteq R$ an ideal.
@@ -947,6 +970,16 @@
             (x+I) \cdot (y+I) = x y + I \quad \forall x,y \in R
         \]
 
+    \item \textbf{Theorem 3.6.7} Universal Property of Factor Rings \\
+        Let $R$ be a ring, and $I \trianglelefteq R$.
+        \begin{enumerate}
+            \item The mapping $\mathrm{can}: R \to R / I$ with $\mathrm{can}(r) = r + I$
+                is a surjective ring homomorphism with kernel $I$.
+            \item If $f : R \to S$ is a ring homomorphism with $f(I) = \{0_S\}$,
+                so that $I \subseteq \ker f$, then there is a unique ring homomorphism
+                $\overline{f}: R / I \to S$ such that $f = \overline{f} \circ \mathrm{can}$.
+        \end{enumerate}
+
     \item \textbf{Theorem 3.6.9:} First Isomorphic Theorem for Rings \\
         Let $R$ and $S$ be rings.
         Then every ring homomorphism $f : R \to S$ induces a ring isommorphism
@@ -958,20 +991,22 @@
 \subsection{Modules}
 
 \begin{itemize}
-
     \item \textbf{Definition 3.7.1:}
         A \emph{(left) module $M$ over a ring $R$} is a pair consisting of an abelian group
         $M = (M, \dot{+})$ and a mapping
+
         \begin{align*}{}
-            R \times M &\to M \\
-            (r,a) &\mapsto ra \\
+            R \times M & \to M \\
+            (r,a)      & \mapsto ra \\
         \end{align*}
+
         such that $\forall r,s \in R$ and $a,b \in M$ the following identites hold:
+
         \begin{align*}{}
-            r(a \dot{+} b) &= (ra) \dot{+} (rb) & \text{(distributivity)} \\
-            (r+s)a &= (ra) \dot{+} (sa) & \text{(distributivity)}\\
-            r(sa) &= (rs)a & \text{(associativty)}\\
-            {1_R}a &= a
+            r(a \dot{+} b) & = (ra) \dot{+} (rb) & \text{(distributivity)} \\
+            (r+s)a         & = (ra) \dot{+} (sa) & \text{(distributivity)}\\
+            r(sa)          & = (rs)a             & \text{(associativty)}\\
+            {1_R}a         & = a
         \end{align*}
 
     \item \textbf{Lemma 3.7.8:} Let $R$ be a ring, and $M$ an $R$-module.
@@ -987,8 +1022,8 @@
         A mapping $f : M \to N$ is an \emph{$R$-homomorphism} if the following hold
         $\forall a,b \in M$ and $r \in R$:
         \begin{align*}{}
-            f(a+b) &= f(a) + f(b) \\
-            f(ra) &= rf(a)
+            f(a+b) & = f(a) + f(b) \\
+            f(ra)  & = rf(a)
         \end{align*}
         The \emph{kernel} of $f$ is $\ker f = \{a\in M : f(a) = 0_N \} \subseteq M$
         and the \emph{image} of $f$ is $\mathrm{im} f = \{f(a) : a \in M\} \subseteq N$. \\
