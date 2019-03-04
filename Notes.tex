@@ -982,9 +982,9 @@
 
     \item \textbf{Theorem 3.6.9:} First Isomorphic Theorem for Rings \\
         Let $R$ and $S$ be rings.
-        Then every ring homomorphism $f : R \to S$ induces a ring isommorphism
+		Then every ring homomorphism $f: R \to S$ induces a ring isomorphism
         \[
-            \overline{f} : R / \ker f \to \mathrm{im} f
+            \overline{f} : R / \ker f \tilde{\to} \mathrm{im} f
         \]
 \end{itemize}
 
@@ -1000,12 +1000,12 @@
             (r,a)      & \mapsto ra \\
         \end{align*}
 
-        such that $\forall r,s \in R$ and $a,b \in M$ the following identites hold:
+        such that $\forall r,s \in R$ and $a,b \in M$ the following identities hold:
 
         \begin{align*}{}
             r(a \dot{+} b) & = (ra) \dot{+} (rb) & \text{(distributivity)} \\
             (r+s)a         & = (ra) \dot{+} (sa) & \text{(distributivity)}\\
-            r(sa)          & = (rs)a             & \text{(associativty)}\\
+            r(sa)          & = (rs)a             & \text{(associativity)}\\
             {1_R}a         & = a
         \end{align*}
 
@@ -1035,7 +1035,7 @@
 
     \item \textbf{Proposition 3.7.20:} Test for a submodule \\
         Let $R$ be a ring and let $M$ be an $R$-module.
-        A subset $M' \subseteq M$ is a submodue if and only if
+        A subset $M' \subseteq M$ is a submodule if and only if
         \begin{enumerate}
             \item $0_M \in M'$
             \item $a,b \in M' \implies a-b \in M'$
@@ -1113,12 +1113,12 @@
 
 \begin{tabular}{cccc}
     \toprule
-               & \emph{Associativity} & \emph{Identity} & \emph{Inverses} \\
+              & \emph{Associativity} & \emph{Identity} & \emph{Inverses} \\
     \midrule
-    Group      & Yes                  & Yes             & Yes \\
-    Monoid     & Yes                  & Yes             & No  \\
-    Semigroup  & Yes                  & No              & No  \\
-    Magma      & No                   & No              & No  \\
+    Group     & Yes                  & Yes             & Yes \\
+    Monoid    & Yes                  & Yes             & No  \\
+    Semigroup & Yes                  & No              & No  \\
+    Magma     & No                   & No              & No  \\
     \bottomrule
 \end{tabular}
 
