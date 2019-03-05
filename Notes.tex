@@ -1079,14 +1079,35 @@
         \]
         is a submodule of $M$.
 
-    \item \textbf{Theorem-Definition 3.7.31:} \\
+    \item \textbf{Definition 3.7.31.1:} \emph{Coset} \\
         Let $R$ be a ring, $M$ an $R$-module, and $N$ a submodule of $M$.
         For each $a \in M$, the \emph{coset of $a$ with respect to $N$ in $M$} is
         \[
             a + N = \{ a + b : b \in N \}.
         \]
-        It is a coset of $N$ in the abelian group $M$ and os is an equivalence class for the
+        It is a coset of $N$ in the abelian group $M$ and is is an equivalence class for the
         equivalence relation $a \sim b \iff a-b \in N$.
+
+    \item \textbf{Definition 3.7.31.2:} \emph{Factor} \\
+        $M/N$, the \emph{factor of $M$ by $N$} or the \emph{quotient of $M$ by $N$},
+        is the set $(M \ / \sim)$ of all cosets of $N$ in $M$.
+        \[
+            M/N = \{ a + N : a \in M \}
+        \]
+        This becomes an $R$-module by introducing the operations of addition and multiplication
+        as follows:
+        \begin{align*}{}
+            (a + N) \dot{+} (b + N) & = (a + b) + N \\
+            r(a + N)                & = ra + N
+        \end{align*}
+        for all $a, b \in M, r \in R$.
+
+    \item \textbf{Theorem 3.7.31.3:} \emph{Factor module}
+        \begin{itemize}
+            \item The zero of $M/N$ is the coset $0_{M/N} = 0_M + N$.
+            \item The negative of $a + N \in M/N$ is the coset $-(a+N) = (-a)+N$.
+            \item The $R$-module $M/N$ is the \emph{factor module} of $M$ by the submodule $N$.
+        \end{itemize}
 
     \item \textbf{Theorem 3.7.32:} The Universal Property of Factor Modules \\
         Let $R$ be a ring, and let $L$ and $M$ be $R$-modules, and $N$ a submodule of $M$.
