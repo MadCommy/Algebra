@@ -45,7 +45,7 @@
 
 \begin{itemize}
 
-    \item \textbf{Definition 1.2.1:} \\
+    \item \textbf{Definition 1.2.1.1:} \emph{Fields} \\
         A \emph{field} $F$ is a set with functions
         \begin{align*}{}
             \text{addition} \  &= + : F \times F \to F \ ;
@@ -61,9 +61,9 @@
         In particular
         \[
             \lambda + \mu = \mu + \lambda ,\
-            \lambda. \mu = \mu. \lambda ,\
+            \lambda. \mu  = \mu. \lambda ,\
             \lambda + 0_F = \lambda ,\
-            \lambda. 1_F = \lambda \in F, \quad
+            \lambda. 1_F  = \lambda \in F, \quad
             \forall \lambda, \mu \in F
         \]
         For every $\lambda \in F$ there exists $-\lambda \in F$ such that
@@ -75,6 +75,7 @@
             \lambda(\lambda^{-1}) = 1_F \in F
         \]
 
+    \item \textbf{Definition 1.2.1.2:} \emph{Vector space} \\
         A \emph{vector space} $V$ over a \emph{field} $F$
         is a pair consisting of an abelian group $V = (V,+)$ and a mapping
         \[
@@ -653,10 +654,10 @@
         Let $R$ be a ring, let $a,b \in R$ and let $m,n \in \mathbb{Z}$.
         Then
         \begin{enumerate}
-            \item $m(a+b) = ma + mb$;
-            \item $(m+n)a = ma + na$;
-            \item $m(na) = (mn)a$;
-            \item $m(ab) = (ma)b = a(mb)$;
+            \item $m(a+b)   = ma + mb$;
+            \item $(m+n)a   = ma + na$;
+            \item $m(na)    = (mn)a$;
+            \item $m(ab)    = (ma)b      = a(mb)$;
             \item $(ma)(nb) = (mn)(ab)$;
         \end{enumerate}
 
@@ -782,9 +783,9 @@
         Let $R$ and $S$ be rings and $f : R \to S$ a ring homomorphism.
         Then $\forall x,y, \in R$ and $m \in \mathbb{Z}$
         \begin{enumerate}
-            \item $f(0_R) = 0_S$
-            \item $f(-x) = -f(x)$
-            \item $f(x-y) = f(x) - f(y)$
+            \item $f(0_R)       = 0_S$
+            \item $f(-x)        = -f(x)$
+            \item $f(x-y)       = f(x) - f(y)$
             \item $f(m \cdot x) = m\cdot f(x)$
         \end{enumerate}
         Where $mx$ denotes the $m$-th multiple of $x$.
@@ -889,10 +890,13 @@
     \item \textbf{Definition 3.5.3:} \\
         Suppose that $\sim$ is an equivalence relation on a set $X$.
         For $x \in X$ the set $E(x) \equiv \{z \in X : z\sim x\}$ is called the
-        \emph{equivalence class} of $x$. \\
+        \emph{equivalence class} of $x$.
+
         A subset $E \subseteq X$ is called an \emph{equivalence class} for $\sim$ if
-        $\exists x \in X \backepsilon E=E(x)$. \\
-        An element of an equivalence class is called a \emph{representative} of the class. \\
+        $\exists x \in X \backepsilon E=E(x)$.
+
+        An element of an equivalence class is called a \emph{representative} of the class.
+
         A subset $Z \subseteq X$ containing precisely one element from each equivalence class is
         called a \emph{system of representatives} for the equivalence relation.
 
@@ -982,7 +986,7 @@
 
     \item \textbf{Theorem 3.6.9:} First Isomorphic Theorem for Rings \\
         Let $R$ and $S$ be rings.
-		Then every ring homomorphism $f: R \to S$ induces a ring isomorphism
+        Then every ring homomorphism $f: R \to S$ induces a ring isomorphism
         \[
             \overline{f} : R / \ker f \tilde{\to} \mathrm{im} f
         \]
@@ -994,20 +998,18 @@
     \item \textbf{Definition 3.7.1:}
         A \emph{(left) module $M$ over a ring $R$} is a pair consisting of an abelian group
         $M = (M, \dot{+})$ and a mapping
-
         \begin{align*}{}
             R \times M & \to M \\
-            (r,a)      & \mapsto ra \\
+            (r,a)      & \mapsto ra
         \end{align*}
-
         such that $\forall r,s \in R$ and $a,b \in M$ the following identities hold:
-
         \begin{align*}{}
             r(a \dot{+} b) & = (ra) \dot{+} (rb) & \text{(distributivity)} \\
             (r+s)a         & = (ra) \dot{+} (sa) & \text{(distributivity)}\\
             r(sa)          & = (rs)a             & \text{(associativity)}\\
             {1_R}a         & = a
         \end{align*}
+        i.e.\ a vector space, but with a \emph{ring} instead of a \emph{field}.
 
     \item \textbf{Lemma 3.7.8:} Let $R$ be a ring, and $M$ an $R$-module.
         \begin{enumerate}
@@ -1122,6 +1124,8 @@
     \bottomrule
 \end{tabular}
 
-Ring = (Group, Monoid)
+Ring  = (Group, Monoid)
+
+Field = (Group, Group)
 
 \end{document}
