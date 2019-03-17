@@ -41,7 +41,7 @@
         of the associated homogenised system to a fixed solution of the system.
 \end{itemize}
 
-\subsection{Fields and vector spaces}
+\subsection{Fields \& vector spaces}
 
 \begin{itemize}
 
@@ -1131,12 +1131,12 @@
         \]
 \end{itemize}
 
-\section{Determinants and Eigenvalues Redux}
+\section{Determinants \& Eigenvalues Redux}
 
 \subsection{The sign of a permutation}
 
 \begin{itemize}
-    \item \textbf{Definition 4.1.1}
+    \item \textbf{Definition 4.1.1} \emph{Transposition} \\
         The group of all permutations of the set $\{1,2,\ldots,n\}$, also known as bijections from
         $\{1,2,\ldots,n\}$ to itself, is denoted by $\mathfrak{S}_n$ and called the
         \emph{$n$-th symmetric group}.
@@ -1145,7 +1145,7 @@
         A \emph{transposition} is a permutation that swaps two elements of the set
         and leaves all the others unchanged.
 
-    \item \textbf{Definition 4.1.2} \\
+    \item \textbf{Definition 4.1.2} \emph{Inversion \& Sign} \\
         An \emph{inversion} of a permutation $\sigma \in \mathfrak{S}_n$ is a pair $(i,j)$
         such that $1 \leq i < j \leq n$ and $\sigma(i) > \sigma(j)$.
         The number of inversions of the permutation $\sigma$ is called the \emph{length of}
@@ -1154,12 +1154,16 @@
         \[
             \ell(\sigma) = |\{(i,j) : i < j \ \mathrm{but} \ \sigma(i) > \sigma(j) \}|
         \]
-        The \emph{sign of} $\sigma$ is defined to be the parity of the number of inversions of 
+        The \emph{sign of} $\sigma$ is defined to be the parity of the number of inversions of
         $\sigma$.
         In formulas:
         \[
             \mathrm{sgn}(\sigma) = {(-1)}^{\ell(\sigma)}
         \]
+        A permutation whose sign is $+1$, in other words which has even length, is called an
+        \emph{even permutation},
+        while a permutation whose sign is $-1$, in other words which has odd length,
+        is called an \emph{odd permutation}.
 
     \item \textbf{Lemma 4.1.5} (Multiplicativity of the sign) \\
         For each $n \in \mathbb{N}$ the sign of a permutation produces a group homomorphism
@@ -1174,10 +1178,101 @@
     \item \textbf{Definition 4.1.7} \emph{Alternating group} \\
         For $n \in \mathbb{N}$, the set of even permutations in $\mathfrak{S}_n$ forms a subgroup
         of $\mathfrak{S}_n$ because it is the kernel of the group homomorphism
-        $\mathrm{sgn} \ : \ \mathfrak{S}_n \to \{+1, -1\}$.
+        $\mathrm{sgn} : \mathfrak{S}_n \to \{+1, -1\}$.
         This group is the \emph{alternating group} and is denoted $A_n$.
 
 \end{itemize}
+
+\subsection{Determinants \& what they mean}
+
+\begin{itemize}
+    \item \textbf{Definition 4.2.1}
+        Let $R$ be a commutative ring and $n \in \mathbb{N}$. \\
+        The \emph{determinant} is a mapping
+        $\det : \mathrm{Mat}(n;R) \to R$ from square matrices with coefficients in $R$
+        to the ring $R$ that is given by the following formula:
+        \[
+            A =
+            \begin{bmatrix}
+                a_{11} & \cdots & a_{1n} \\
+                \vdots & \ddots & \vdots \\
+                a_{n1} & \cdots & a_{nn} \\
+            \end{bmatrix}
+            \mapsto \det (A) =
+            \sum_{\sigma \in \mathfrak{S}_n}
+            \mathrm{sgn}(\sigma) a_{1\sigma(1)} \ldots a_{n\sigma(n)}
+        \]
+        This formula is called the \emph{Leibnitz formula}. \\
+        The degenerate case $n=0$ assigns the value $1$ as the determinant of the ``empty matrix''.
+
+    \item \emph{The connection between determinants and volumes} \\
+        The determinant of a matrix is equal to the scaling factor it performs.
+
+    \item \emph{The connection between determinants and orientation} \\
+        The sign of the determinant determines the orientation:
+        $\det = +1$ preserves the orientation;
+        $\det = -1$ reverses the orientation.
+
+\end{itemize}
+
+\subsection{Characterising the determininant}
+
+\begin{itemize}
+    \item \textbf{Definition 4.3.1} \emph{Bi-linear forms} \\
+        Let $U,V, W$ be $F$-vector spaces. \\
+        A \emph{bi-linear form on $U \times V$ with values in $W$} is a mapping
+        $H:U \times V \to W$ which is a linear mapping in both of its entries. \\
+        This means that it must satisfy the following properties for all
+        $u_1, u_2 \in U; \ v_1, v_2 \in V; \ \lambda \in F$:
+        \begin{align*}{}
+            H(u_1 + u_2, v_1)   &= H(u_1, v_1) + H(u_2, v_1) \\
+            H(\lambda u_1, v_1) &= \lambda H(u_1, v_1) \\
+            H(u_1, v_1 + v_2)   &= H(u_1, v_1) + H(u_1, v_2) \\
+            H(u_1, \lambda v_1) &= \lambda H(u_1, v_1)
+        \end{align*}
+        The first two conditions state that for any fixed $v \in V$ the mapping
+        $H(-, v) : U \to W$ is linear.
+        $H$ is a \emph{bi-linear form}.
+        A bi-linear form $H$ is \emph{symmetric} if $U=V$ and
+        \[
+            H(u, v) = H(v, u) \quad \forall u, v \in U
+        \]
+        while it is \emph{alternating} or \emph{antisymmetric} if $U=V$ and
+        \[
+            H(u, u) = 0 \quad \forall u \in U
+        \]
+
+    \item \textbf{Definition 4.3.3} \emph{Multi-linear forms} \\
+        Let $V_1, \ldots, V_n, W$ be $F$-vector spaces.
+        A mapping $H : V_1 \times V_2 \times \cdots \times V_n \to W$
+        is a \emph{multi-linear form} or \emph{multi-linear}
+        if for each $j$, the mapping $V_j \to W$ defined by
+        $v_j \mapsto H(v_1, \ldots, v_j, \ldots, v_n)$, with $v_i \in V_i$ arbitrary fixed vectors
+        of $V_i$ for $i \neq j$, is linear.
+        In the case $n=2$, this is exactly the definition of a bi-linear mapping.
+
+    \item \textbf{Definition 4.3.4} \emph{Alternating} \\
+        Let $V$ and $W$ be $F$-vector spaces.
+        A multi-linear form $H : V \times \cdots \times V \to W$
+        is \emph{alternating} if it vanishes on every $n$-tuple of elements of $V$ that has at
+        least two entries equal, in other words if:
+        \[
+            (\exists i \neq j \ \mathrm{with} \ v_i = v_j) \implies
+            H(v_1, \ldots, v_i, \ldots, v_j, \ldots, v_n) = 0
+        \]
+        In the case $n=2$, this is exactly the definition of an alternating or anti-symmetric
+        bi-linear mapping.
+
+    \item \textbf{Theorem 4.3.6} Characterisation of the determinant \\
+        Let $F$ be a field.
+        The mapping
+        \[
+            \det : \mathrm{Mat}(n;F) \to F
+        \]
+        is the unique alternating multi-linear form on $n$-tuples of column vectors
+        with values in $F$ that takes the value $1_F$ on the identity matrix.
+        
+\end{itemize}<++>
 
 \section{Reference}
 
