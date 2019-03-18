@@ -307,7 +307,7 @@
 
 \begin{itemize}
 
-    \item \textbf{Definition 1.7.1} Linear mappings \\
+    \item \textbf{Definition 1.7.1} \emph{Linear mapping} \\
         Let $V,W$ be vector spaces over a field $F$.
         A mapping $f: V \to W$ is called \emph{linear}
         if for all $\textbf{v}_1, \textbf{v}_2 \in V$ and $\lambda \in F$ we have
@@ -1226,9 +1226,9 @@
         $u_1, u_2 \in U; \ v_1, v_2 \in V; \ \lambda \in F$:
         \begin{align*}{}
             H(u_1 + u_2, v_1)   &= H(u_1, v_1) + H(u_2, v_1) \\
-            H(\lambda u_1, v_1) &= \lambda H(u_1, v_1) \\
             H(u_1, v_1 + v_2)   &= H(u_1, v_1) + H(u_1, v_2) \\
-            H(u_1, \lambda v_1) &= \lambda H(u_1, v_1)
+            H(u_1, \lambda v_1) &= \lambda H(u_1, v_1) \\
+            H(\lambda u_1, v_1) &= \lambda H(u_1, v_1)
         \end{align*}
         The first two conditions state that for any fixed $v \in V$ the mapping
         $H(-, v) : U \to W$ is linear.
@@ -1244,11 +1244,10 @@
 
     \item \textbf{Definition 4.3.3} \emph{Multi-linear forms} \\
         Let $V_1, \ldots, V_n, W$ be $F$-vector spaces.
-        A mapping $H : V_1 \times V_2 \times \cdots \times V_n \to W$
-        is a \emph{multi-linear form} or \emph{multi-linear}
-        if for each $j$, the mapping $V_j \to W$ defined by
-        $v_j \mapsto H(v_1, \ldots, v_j, \ldots, v_n)$, with $v_i \in V_i$ arbitrary fixed vectors
-        of $V_i$ for $i \neq j$, is linear.
+        A mapping $H : V_1 \times V_2 \times \cdots \times V_n \to W$ is a
+        \emph{multi-linear form} or \emph{multi-linear} if for each $j$,
+        the mapping $V_j \to W$ defined by $v_j \mapsto H(v_1, \ldots, v_j, \ldots, v_n)$,
+        with $v_i \in V_i$ arbitrary fixed vectors of $V_i$ for $i \neq j$, is linear.
         In the case $n=2$, this is exactly the definition of a bi-linear mapping.
 
     \item \textbf{Definition 4.3.4} \emph{Alternating} \\
@@ -1271,8 +1270,170 @@
         \]
         is the unique alternating multi-linear form on $n$-tuples of column vectors
         with values in $F$ that takes the value $1_F$ on the identity matrix.
-        
-\end{itemize}<++>
+
+\end{itemize}
+
+\subsection{Rules for calculating with determinants}
+
+\begin{itemize}
+    \item \textbf{Theorem 4.4.1} Multiplicativity of the determinant \\
+        Let $R$ be a commutative ring and let $A, B \in \mathrm{Mat}(n; R)$.
+        Then
+        \[
+            \det(A B) = \det(A)\det(B)
+        \]
+
+    \item \textbf{Theorem 4.4.2} Determinantal criterion for invertibility \\
+        The determinant of a square matrix with entries in a field $F$ is non-zero
+        if and only if the matrix is invertible.
+
+    \item \textbf{Definition 4.4.6} \emph{Cofactor} \\
+        Let $A \in \mathrm{Mat}(n; R)$ for some commutative ring $R$ and $n \in \mathbb{N}$.
+        Let $i, j \in (1,n) \subset \mathbb{N}$.
+        Then the $(i, j)$ \emph{cofactor of} $A$ is
+        $C_{ij} = {(-1)}^{i+j} \det(A \langle i, j \rangle)$
+        where $A \langle i, j \rangle$ is the matrix obtained by deleting the $i$-th row and the
+        $j$-th column.
+
+    \item \textbf{Theorem 4.4.7} Laplace's expansion of the determinant \\
+        Let $A = (a_{ij})$ be an $(n \times n)$ matrix with entries from a commutative ring $R$.
+
+        For a fixed $i$, the \emph{$i$-th row expansion of the determinant} is
+        \[
+            \det(A) = \sum_{j=1}^n a_{ij} C_{ij}
+        \]
+        and for a fixed $j$, the \emph{$j$-th column expansion of the determinant} is
+        \[
+            \det(A) = \sum_{i=1}^n a_{ij} C_{ij}
+        \]
+
+    \item \textbf{Definition 4.4.8} \emph{Adjugate matrix} \\
+        Let $A$ be an $(n \times n)$ matrix whose entries are
+        $\mathrm{adj}{
+        (A)}_{ij} = C_{ji}$ where $C_{ji}$ is the $(j, i)$ cofactor.
+
+    \item \textbf{Theorem 4.4.9} Cramer's rule \\
+        Let $A$ be an $(n \times n)$ matrix with entries in a commutative ring $R$.
+        Then
+        \[
+            A \cdot \mathrm{adj}(A) = (\det A)I_n
+        \]
+
+    \item \textbf{Corollary 4.4.11} Invertibility of matrices \\
+        A square matrix with entries in a commutative ring $R$ is invertible if and only if its
+        determinant is a unit in $R$.
+        That is, $A \in \mathrm{Mat}(n; R)$ is invertible if and only if $\det(A) \in R^\times$.
+
+\end{itemize}
+
+\subsection{Eigenvalues \& Eigenvectors}
+
+\begin{itemize}
+    \item \textbf{Definition 4.5.1} \emph{Eigenvalue} \\
+        Let $f : V \to V$ be an endomorphism of an $F$-vector space $V$.
+        A scalar $\lambda \in F$ is an \emph{eigenvalue} of $f$ if and only if there exists
+        a non-zero vector $\textbf{v} \in V$ such that $f(\textbf{v}) = \lambda \textbf{v}$.
+
+        Each such vector is called an \emph{eigenvector of $f$ with eigenvalue $\lambda$}.
+
+        For any $\lambda \in F$, the \emph{eigenspace of $f$ with eigenvalue $\lambda$} is
+        \[
+            E(\lambda, f) = \{ \textbf{v} \in V \ : \ f(\textbf{v}) = \lambda \textbf{v} \}
+        \]
+
+    \item \textbf{Theorem 4.5.4} Existence of Eigenvalues \\
+        Each endomorphism of a non-zero finite-dimensional vector space over an algebraically
+        closed field has an eigenvalue.
+
+    \item \textbf{Definition 4.5.6} \emph{Characteristic polynomial} \\
+        Let $R$ be a commutative ring and let $A \in \mathrm{Mat}(n; R)$ be a square matrix with
+        entries in $R$.
+        The polynomial $\det (A - x I_n) \in R[x]$ is called the
+        \emph{characteristic polynomial of the matrix $A$}.
+        It is denoted by
+        \[
+            \chi_A (x) \equiv \det(A - x I_n)
+        \]
+        where $\chi$ stands for $\chi$aracteristic.
+
+    \item \textbf{Theorem 4.5.8} Eigenvalues and characteristic polynomials \\
+        Let $F$ be a field and $A \in \mathrm{Mat}(n; F)$ a square matrix with entries in $F$.
+        The eigenvalues of the linear mapping $A : F^n \to F^n$ are exactly the roots of the
+        characteristic polynomial $\chi_A$.
+
+\end{itemize}
+
+\subsection{Triangularisable, Diagonalisable, \& the Cayley-Hamilton theorem}
+
+\begin{itemize}
+    \item \textbf{Proposition 4.6.1} Triangularisability \\
+        Let $f : V \to V$ be an endomorphism of a finite-dimensional $F$-vector space $V$.
+        The following two statements are equivalent:
+        \begin{enumerate}
+            \item The vector space $V$ has an ordered basis
+                $\mathcal{B} = (\textbf{v}_1, \textbf{v}_2, \ldots, \textbf{v}_n)$ such that
+                \begin{align*}{}
+                    f(\textbf{v}_1) &= a_{11}\textbf{v}_1 \\
+                    f(\textbf{v}_2) &= a_{12}\textbf{v}_1 + a_{22}\textbf{v}_2 \\
+                                    &\vdots \\
+                    f(\textbf{v}_n) &= a_{1n}\textbf{v}_1 + a_{2n}\textbf{v}_2 + \cdots +
+                    a_{nn}\textbf{v}_n \in V
+                \end{align*}
+                (so that the first basis vector $\textbf{v}_1$ is an eigenvector,
+                with eigenvalue $a_{11}$) or equivalently such that the $n \times n$ matrix
+                $_\mathcal{B}{[f]}_\mathcal{B} = (a_{ij})$ representing $f$ with respect to
+                $\mathcal{B}$ is upper triangular.
+
+                \[
+                    A =
+                    \begin{bmatrix}{}
+                        a_{11} & a_{12} & a_{13} & \cdots & a_{1n} \\
+                        0      & a_{22} & a_{23} & \cdots & a_{1n} \\
+                        0      & 0      & a_{33} & \cdots & a_{1n} \\
+                        \vdots & \vdots & \vdots & \ddots & \vdots \\
+                        0      & 0      & 0      & \cdots & a_{nn}
+                    \end{bmatrix}
+                \]
+                When this happens, $f$ is \emph{triangularisable}.
+
+            \item The characteristic polynomial $\chi_{f(x)}$ of $f$ decomposes into linear
+                factors in $F[x]$.
+
+        \end{enumerate}
+
+    \item \textbf{Definition 4.6.5} \emph{Diagonalisable} \\
+        An endomorphism $f : V \to V$ of an $F$-vector space $V$ is \emph{diagonalisable}
+        if and only if there exists a basis of $V$ consisting of eigenvectors of $f$.
+
+        If $V$ is finite-dimensional, then this is the same as saying that there exists an
+        ordered basis $\mathcal{B} = \{ \textbf{v}_1, \ldots, \textbf{v}_n \}$
+        such that the corresponding matrix representing $f$ is diagonal,
+        that is $_\mathcal{B}{[f]}_\mathcal{B} = \mathrm{diag}(\lambda_1, \ldots, \lambda_n$).
+        In this case, of course, $f(\textbf{v}_i) = \lambda_i v_i$.
+
+        A square matrix $A \in \mathrm{Mat}(n; F)$ is \emph{diagonalisable} if and only if
+        the corresponding linear mapping $F^n \to F^n$ given by the left multiplication of $A$
+        is diagonalisable.
+        This just means that $A$ is conjugate to a diagonal matrix:
+        there exists an invertible matrix $P \in \mathrm{GL}(n; F)$ such that
+        $P^{-1} A P = \mathrm{diag}(\lambda_1, \ldots, \lambda_n)$.
+        In this case, the columns of $P$ are the vectors of a basis of $F^n$ consisting of
+        eigenvectors of $A$ with eigenvalues $\lambda_1, \ldots, \lambda_n$.
+
+    \item \textbf{Lemma 4.6.8} Linear independence of Eigenvectors \\
+        Let $f : V \to V$ be an endomorphism of a vector space $V$ and let
+        $\textbf{v}_1, \ldots, \textbf{v}_n$ be eigenvectors of $f$ with pairwise different
+        eigenvalues $\lambda_1, \ldots, \lambda_n$. \\
+        Then the vectors $\textbf{v}_1, \ldots, \textbf{v}_n$ are linearly independent.
+    
+    \item \textbf{Theorem 4.6.9} Cayley-Hamilton Theorem \\
+        Let $A \in \mathrm{Mat}(n; R)$ be a square matrix with entries in a commutative ring $R$.
+        Then evaluating its characteristic polynomial $\chi_A(x) \in R[x]$ at the matrix $A$ gives
+        zero.
+
+\end{itemize}
+
+\subsection{Google's PageRank Algorithm}
 
 \section{Reference}
 
@@ -1280,12 +1441,12 @@
 
 \begin{tabular}{cccc}
     \toprule
-              & \emph{Associativity} & \emph{Identity} & \emph{Inverses} \\
+               & \emph{Associativity} & \emph{Identity} & \emph{Inverses} \\
     \midrule
-    Group     & Yes                  & Yes             & Yes \\
-    Monoid    & Yes                  & Yes             & No  \\
-    Semigroup & Yes                  & No              & No  \\
-    Magma     & No                   & No              & No  \\
+    Group      & Yes                  & Yes             & Yes \\
+    Monoid     & Yes                  & Yes             & No  \\
+    Semi-group & Yes                  & No              & No  \\
+    Magma      & No                   & No              & No  \\
     \bottomrule
 \end{tabular}
 
