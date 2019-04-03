@@ -5,6 +5,7 @@
 \usepackage{tabularx}
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{amsthm}
 \usepackage{geometry}
 \usepackage{booktabs}
 \usepackage{centernot}
@@ -1202,7 +1203,7 @@
             \sum_{\sigma \in \mathfrak{S}_n}
             \mathrm{sgn}(\sigma) a_{1\sigma(1)} \ldots a_{n\sigma(n)}
         \]
-        This formula is called the \emph{Leibnitz formula}. \\
+        This formula is called the \emph{Leibniz formula}. \\
         The degenerate case $n=0$ assigns the value $1$ as the determinant of the ``empty matrix''.
 
     \item \emph{The connection between determinants and volumes} \\
@@ -1268,8 +1269,15 @@
         \[
             \det : \mathrm{Mat}(n;F) \to F
         \]
-        is the unique alternating multi-linear form on $n$-tuples of column vectors
-        with values in $F$ that takes the value $1_F$ on the identity matrix.
+        is the unique, alternating, multi-linear form on $n$-tuples of column vectors with values
+        in $F$ that takes the value $1_F$ on the identity matrix.
+        \begin{enumerate}
+            \item Is it a multi-linear form?
+            \item Does it go from $F^n \times \cdots \times F^n \to F$?
+            \item Is it alternating?
+            \item Does it take the value 1 on the identity?
+        \end{enumerate}
+        If (and only if) answered \emph{yes} to all, then we have a determinant.
 
 \end{itemize}
 
@@ -1286,6 +1294,13 @@
     \item \textbf{Theorem 4.4.2} Determinantal criterion for invertibility \\
         The determinant of a square matrix with entries in a field $F$ is non-zero
         if and only if the matrix is invertible.
+
+    \item \textbf{Lemma 4.4.4} \\
+        The determinant of a square matrix and the transpose of the square matrix are equal,
+        that is, for all $A \in \mathrm{Mat}(n; R)$ with $R$ a commutative ring
+        \[
+            \det(A^T) = \det(A)
+        \]
 
     \item \textbf{Definition 4.4.6} \emph{Cofactor} \\
         Let $A \in \mathrm{Mat}(n; R)$ for some commutative ring $R$ and $n \in \mathbb{N}$.
@@ -1340,6 +1355,11 @@
         \[
             E(\lambda, f) = \{ \textbf{v} \in V \ : \ f(\textbf{v}) = \lambda \textbf{v} \}
         \]
+        When $\lambda = 1$, this is equivalent to having a \emph{fixed-point mapping}.
+
+        When $\lambda = 0$, this is equivalent to the \emph{kernel} of the mapping.
+
+        The corresponding \emph{eigenvectors} are the null-space of $(A - \lambda I_n)$
 
     \item \textbf{Theorem 4.5.4} Existence of Eigenvalues \\
         Each endomorphism of a non-zero finite-dimensional vector space over an algebraically
@@ -1383,7 +1403,6 @@
                 with eigenvalue $a_{11}$) or equivalently such that the $n \times n$ matrix
                 $_\mathcal{B}{[f]}_\mathcal{B} = (a_{ij})$ representing $f$ with respect to
                 $\mathcal{B}$ is upper triangular.
-
                 \[
                     A =
                     \begin{bmatrix}{}
@@ -1425,7 +1444,7 @@
         $\textbf{v}_1, \ldots, \textbf{v}_n$ be eigenvectors of $f$ with pairwise different
         eigenvalues $\lambda_1, \ldots, \lambda_n$. \\
         Then the vectors $\textbf{v}_1, \ldots, \textbf{v}_n$ are linearly independent.
-    
+
     \item \textbf{Theorem 4.6.9} Cayley-Hamilton Theorem \\
         Let $A \in \mathrm{Mat}(n; R)$ be a square matrix with entries in a commutative ring $R$.
         Then evaluating its characteristic polynomial $\chi_A(x) \in R[x]$ at the matrix $A$ gives
