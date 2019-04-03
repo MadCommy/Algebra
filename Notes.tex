@@ -389,6 +389,11 @@
         \[
             \text{dim}(U + W) + \text{dim}(U \cap W) = \text{dim}U + \text{dim}W
         \]
+
+    \item \textbf{Definition} \emph{Idempotent} \\
+        An element $f$ of a set with composition or product is called \emph{idempotent} if
+        $f^2 = f$.
+
 \end{itemize}
 
 \section{Linear Mappings and Matrices}
@@ -1454,6 +1459,181 @@
 
 \subsection{Google's PageRank Algorithm}
 
+\section{Inner Product Spaces}
+
+\subsection{Inner Product Spaces: Definitions}
+
+\begin{itemize}
+
+    \item \textbf{Definition 5.1.1} \emph{Real inner product space} \\
+        Let $V$ be a vector space over \mathbb{R}.
+        An \emph{inner product} on $V$ is a mapping
+        \[
+            (-, -) : V \times V \to \mathbb{R}
+        \]
+        that satisfies the following for all $\mathbf{x}, \mathbf{y}, \mathbf{z} \in V$
+        and $\lambda, \mu \in \mathbb{R}$:
+        \begin{enumerate}
+            \item $(\lambda \mathbf{x} + \mu \mathbf{y}, \mathbf{z}) =
+                \lambda(\mathbf{x}, \mathbf{z}) + \mu(\mathbf{y}, \mathbf{z})$
+                \quad (associative)
+            \item $(\mathbf{x}, \mathbf{y}) = (\mathbf{y}, \mathbf{x})$
+                \quad (commutative)
+            \item $(\mathbf{x}, \mathbf{x}) \geq 0$,
+                with equality if and only if $\mathbf{x} = \mathbf{0}$.
+                \quad (positive definite)
+        \end{enumerate}
+        A \emph{real inner product space} is a real vector space endowed with an inner product.
+
+    \item \textbf{Definition 5.1.3} \emph{Complex inner product space} \\
+        Let $V$ be a vector space over $\mathbb{C}$.
+        An \emph{inner product} on $V$ is a mapping
+        \[
+            (-, -) : V \times V \to \mathbb{C}
+        \]
+        that satisfies the following for all $\mathbf{x}, \mathbf{y}, \mathbf{z} \in V$
+        and $\lambda, \mu \in \mathbb{C}$:
+        \begin{enumerate}
+            \item $(\lambda \mathbf{x} + \mu \mathbf{y}, \mathbf{z}) =
+                \lambda(\mathbf{x}, \mathbf{z}) + \mu(\mathbf{y}, \mathbf{z})$
+                \quad (associative)
+            \item $(\mathbf{x}, \mathbf{y}) = \overline{(\mathbf{y}, \mathbf{x})}$
+                \quad (commutative)
+            \item $(\mathbf{x}, \mathbf{x}) \geq 0$,
+                with equality if and only if $\mathbf{x} = \mathbf{0}$.
+                \quad (positive definite)
+        \end{enumerate}
+        Here $\overline{z}$ denotes the complex conjugate of $z$.
+        A \emph{complex inner product space} is a complex vector space endowed with an inner
+        product.
+
+    \item \textbf{Definition} \emph{Skew-linear} \\
+        A mapping $f : V \to W$ between complex vector spaces is \emph{skew-linear}
+        if $f(\mathbf{v}_1 + \mathbf{v}_2) = f(\mathbf{v}_1) + f(\mathbf{v}_2)$
+        and $f(\lambda \mathbf{v}_1) = \overline{\lambda} f(\mathbf{v}_1)$
+        for all $\mathbf{v}_1, \mathbf{v}_2 \in V$ and all $\lambda \in \mathbb{C}$.
+
+    \item \textbf{Definition} \emph{Sesquilinear} \\
+        A complex form that is \emph{skew-linear} in its second variable.
+        When such a form is commutative, it is \emph{hermitian}.
+
+    \item \mathbf{Terminology}
+        \begin{itemize}
+            \item A finite-dimensional real inner product space is a
+                \emph{Euclidean vector space}.
+            \item A complex inner product space is a \emph{unitary space}
+                or \emph{pre-Hilbert space}.
+            \item A finite-dimensional inner product space is a
+                \emph{finite-dimensional Hilbert space}.
+        \end{itemize}
+
+    \item \textbf{Definition 5.1.5} \emph{Length or Inner Product Norm} \\
+        In a real or complex inner product space the \emph{length} or \emph{inner product norm}
+        or \emph{norm} $\lVert \mathbf{v} \rVert \in \mathbb{R}$ of a vector $\textbf{v}$
+        is defined as the non-negative square root
+        \[
+            \lVert \mathbf{v} \rVert = \sqrt{(\mathbf{v}, \mathbf{v})}
+        \]
+        Vectors whose length is 1 are called \emph{units}.
+        Two vectors $\mathbf{v}, \mathbf{w}$ are \emph{orthogonal} and we write
+        \[
+            \mathbf{v} \perp \mathbf{w}
+        \]
+        if and only if $(\mathbf{v}, \mathbf{w}) = 0$.
+
+    \item \textbf{Definition 5.1.7} \emph{Orthonormal family} \\
+        A family ${(\mathbf{v}_i)}_{i \in I}$ for vectors from an inner product space is an
+        \emph{orthogonal family} if all the vectors $\emph{v}_i$ have length 1 and if they
+        are pairwise orthogonal to each other, which, using the Kronecker delta, means
+        \[
+            (\mathbf{v}_i, \mathbf{v}_j) = \delta_{ij}
+        \]
+        An orthonormal family that is a basis is an \emph{orthonormal basis}.
+
+    \item \textbf{Theorem 5.1.10} \\
+        Every finite dimensional inner product space has an orthonormal basis.
+
+\end{itemize}
+
+\subsection{Orthogonal Complements and Orthogonal Projections}
+
+\begin{itemize}
+
+    \item \textbf{Definition 5.2.1} \emph{Orthogonal} \\
+        let $V$ be an inner product space and let $T \subseteq V$ be an arbitrary subset.
+        Define
+        \[
+            T^\perp = \{\mathbf{v} \in V : \mathbf{v} \perp \mathbf{t}, \ \forall
+            \mathbf{t} \in T \},
+        \]
+        calling this set the \emph{orthogonal} to $T$.
+
+    \item \textbf{Proposition 5.2.2} \\
+        Let $V$ be an inner product space and let $U$ be a finite dimensional subspace of $V$.
+        Then $U$ and $U^\perp$ are complementary (\emph{Definition 1.7.6}).
+        In other words
+        \[
+            V = U \oplus U^\perp
+        \]
+
+    \item \textbf{Definition 5.2.3} \emph{Orthogonal complement} \\
+        Let $U$ be a finite dimensional subspace of an inner product space $V$.
+        The space $U^\perp$ is the \emph{orthogonal complement} to $U$.
+        The \emph{orthogonal projection from $V$ onto $U$} is the mapping
+        \[
+            \pi_U : V \to V
+        \]
+        that sends $\mathbf{v} = \mathbf{p} + \mathbf{r}$ to $\mathbf{p}$.
+
+    \item \textbf{Proposition 5.2.4} \\
+        Let $U$ be a finite-dimensional subspace of an inner product space $V$ and let
+        $\pi_U$ be the orthogonal projection from $V$ to $U$.
+        \begin{enumerate}
+            \item $\pi_U$ is a linear mapping with $\mathrm{im} (\pi_U) = U$ and
+                $\ker(\pi_U) = U^\perp$.
+
+            \item If $\{ \mathbf{v}_1, \ldots, \mathbf{v}_n\}$ is an orthonormal basis of $U$,
+                then $\pi_U$ is given by the following formula for all $\mathbf{v} \in V$
+                \[
+                    \pi_U(\mathbf{v}) = \sum_{i=1}^n (\mathbf{v}, \mathbf{v}_i) \mathbf{v}_i
+                \]
+            \item $\pi_U^2 = \pi_U$, that is $\pi_U$ is an idempotent.
+        \end{enumerate}
+
+    \item \textbf{Theorem 5.2.5} Cauchy-Schwarz Inequality \\
+        Let $\mathbf{v}, \mathbf{w}$ be vectors in an inner product space. Then
+        \[
+            |(\mathbf{v}, \mathbf{w})| \leq \lVert \mathbf{v} \rVert \lVert \mathbf{w} \rVert
+        \]
+        with equality if and only if $\mathbf{v}$ and $\mathbf{w}$ are linearly dependent.
+
+    \item \textbf{Corollary 5.2.6} \\
+        The norm $\lVert \cdot \rVert$ on an inner product space $V$ satisfies,
+        for any $\mathbf{v}, \mathbf{w} \in V$ and scalar $\lambda$:
+        \begin{enumerate}
+            \item $\lVert \mathbf{v} \rVert \geq 0$ with equality if and only if
+                $\mathbf{v} = \mathbf{0}$
+            \item $\lVert \lambda \mathbf{v} \rVert = |\lambda| \lVert \mathbf{v} \rVert$
+            \item $\lVert \mathbf{v} + \mathbf{w} \rVert \leq
+                \lVert \mathbf{v} \rVert + \lVert \mathbf{w} \rVert$,
+                the \emph{triangle inequality}.
+        \end{enumerate}
+
+    \item \textbf{Theorem 5.2.7} \\
+        Let $\mathbf{v}_1, \ldots, \mathbf{v}_k$ be linearly independent vectors in an
+        inner product space $V$.
+        Then there exists an orthonormal family $\mathbf{w}_1, \ldots, \mathbf{w}_k$
+        with the property that for all $1 \leq i \leq k$
+        \[
+            \mathbf{w}_i \in \mathbb{R}_{<0} \ \mathbf{v}_i +
+            \langle \mathbf{v}_{i-1}, \ldots, \mathbf{v}_1 \rangle
+        \]
+
+\end{itemize}
+
+\subsection{Adjoints and Self-Adjoints}
+<++>
+
 \section{Reference}
 
 \subsection{Terminology of Algebraic Structures}
@@ -1461,7 +1641,7 @@
 \begin{tabular}{cccc}
     \toprule
                & \emph{Associativity} & \emph{Identity} & \emph{Inverses} \\
-    \midrule
+               \midrule
     Group      & Yes                  & Yes             & Yes \\
     Monoid     & Yes                  & Yes             & No  \\
     Semi-group & Yes                  & No              & No  \\
