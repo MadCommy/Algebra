@@ -80,32 +80,32 @@
         A \emph{vector space} $V$ over a \emph{field} $F$
         is a pair consisting of an abelian group $V = (V,+)$ and a mapping
         \[
-            F \times V \to V : (\lambda, \textbf{v}) \mapsto \lambda \textbf{v}
+            F \times V \to V : (\lambda, \mathbf{v}) \mapsto \lambda \mathbf{v}
         \]
-        such that for all $\lambda, \mu \in F$ and $\textbf{v}, \textbf{w} \in V$
+        such that for all $\lambda, \mu \in F$ and $\mathbf{v}, \mathbf{w} \in V$
         the following identities hold:
         \begin{align*}{}
-            \lambda(\textbf{v} + \textbf{w}) & = (\lambda \textbf{v}) + (\lambda \textbf{w})
+            \lambda(\mathbf{v} + \mathbf{w}) & = (\lambda \mathbf{v}) + (\lambda \mathbf{w})
             \quad                            & \text{(distributivity)} \\
-            (\lambda + \mu) \textbf{v}       & = (\lambda \textbf{v}) + (\mu \textbf{v})
+            (\lambda + \mu) \mathbf{v}       & = (\lambda \mathbf{v}) + (\mu \mathbf{v})
             \quad                            & \text{(distributivity)} \\
-            \lambda(\mu \textbf{v})          & = (\lambda \mu) \textbf{v}
+            \lambda(\mu \mathbf{v})          & = (\lambda \mu) \mathbf{v}
             \quad                            & \text{(associativity)} \\
-            1_F\textbf{v}                    & = \textbf{v}
+            1_F\mathbf{v}                    & = \mathbf{v}
         \end{align*}
         A vector space $V$ over a field $F$ is called an $F$-\emph{vector space}.
 
     \item \textbf{Lemma 1.2.2} Product with the scalar zero \\
-        If $V$ is a vector space and $\textbf{v} \in V$, then $0\textbf{v} = \textbf{0}$
+        If $V$ is a vector space and $\mathbf{v} \in V$, then $0\mathbf{v} = \mathbf{0}$
 
     \item \textbf{Lemma 1.2.3} Product with the scalar $(-1)$ \\
-        If $V$ is a vector space and $\textbf{v} \in V$, then $(-1)\textbf{v} = -\textbf{v}$.
+        If $V$ is a vector space and $\mathbf{v} \in V$, then $(-1)\mathbf{v} = -\mathbf{v}$.
 
     \item \textbf{Lemma 1.2.4} Product with the zero vector \\
-        If $V$ is a vector space over a field $F$, then $\lambda\textbf{0} = \textbf{0}$
+        If $V$ is a vector space over a field $F$, then $\lambda\mathbf{0} = \mathbf{0}$
         for all $\lambda \in F$.
-        Furthermore, if $\lambda \textbf{v} = \textbf{0}$,
-        then either $\lambda = 0$ or $\textbf{v} = \textbf{0}$.
+        Furthermore, if $\lambda \mathbf{v} = \mathbf{0}$,
+        then either $\lambda = 0$ or $\mathbf{v} = \mathbf{0}$.
 \end{itemize}
 
 \subsection{Products of sets and of vector spaces}
@@ -116,10 +116,10 @@
 
     \item \textbf{Definition 1.4.1} \emph{Vector subspaces} \\
         A subset $U$ of a vector space $V$ is called a \emph{vector subspace} or \emph{subspace}
-        if $U$ contains $\textbf{0}$ and
+        if $U$ contains $\mathbf{0}$ and
         \[
-            \textbf{u}, \textbf{v} \in U  \text{and} \ \lambda \in F \implies
-            \textbf{u} + \textbf{v} \in U \ \text{and} \ \lambda \textbf{u} \in U
+            \mathbf{u}, \mathbf{v} \in U \ \math{and} \ \lambda \in F \implies
+            \mathbf{u} + \mathbf{v} \in U \ \math{and} \ \lambda \mathbf{u} \in U
         \]
 
     \item \textbf{Proposition 1.4.5} Generating a vector subspace from a subset \\
@@ -130,9 +130,9 @@
             \langle T \rangle = \langle T \rangle _F \subseteq V
         \]
         It can be described as the set of all vectors
-        $\alpha_1 \textbf{v}_1 + \cdots + \alpha_r \textbf{v}_r$ with
-        $\alpha_1, \ldots, \alpha_r \in F$ and $\textbf{v}_1, \ldots, \textbf{v}_r \in T$,
-        together with $\textbf{0}$ in the case $T = \emptyset$.
+        $\alpha_1 \mathbf{v}_1 + \cdots + \alpha_r \mathbf{v}_r$ with
+        $\alpha_1, \ldots, \alpha_r \in F$ and $\mathbf{v}_1, \ldots, \mathbf{v}_r \in T$,
+        together with $\mathbf{0}$ in the case $T = \emptyset$.
 
     \item \textbf{Definition 1.4.7} \emph{Generating set} \\
         A subset of a vector space is called a \emph{generating set} of our vector space if its
@@ -162,10 +162,10 @@
     \item \textbf{Definition 1.5.1} \emph{Linear independence} \\
         A subset $L$ of a vector space $V$ is \emph{linearly independent}
         if for all pairwise different vectors
-        $\textbf{v}_1, \ldots, \textbf{v}_r \in L$ and arbitrary vectors
-        $\alpha_1, \ldots, \textbf{v}_r \in F$,
+        $\mathbf{v}_1, \ldots, \mathbf{v}_r \in L$ and arbitrary vectors
+        $\alpha_1, \ldots, \mathbf{v}_r \in F$,
         \[
-            \alpha_1 \textbf{v}_1 + \cdots + \alpha_r \textbf{v}_r = \textbf{0} \implies
+            \alpha_1 \mathbf{v}_1 + \cdots + \alpha_r \mathbf{v}_r = \mathbf{0} \implies
             \alpha_1 = \cdots = \alpha_r = 0
         \]
 
@@ -178,13 +178,13 @@
 
     \item \textbf{Theorem 1.5.11} Linear combinations of basis elements \\
         Let $F$ be a field, $V$ be a vector space over $F$, and
-        $\textbf{v}_1, \ldots, \textbf{v}_r \in V$ vectors.
-        The family ${(\textbf{v}_i)}_{1 \leq i \leq r}$ is a basis of $V$ if and only if the
+        $\mathbf{v}_1, \ldots, \mathbf{v}_r \in V$ vectors.
+        The family ${(\mathbf{v}_i)}_{1 \leq i \leq r}$ is a basis of $V$ if and only if the
         following ``evaluation'' mapping
         \begin{align*}{}
             \Phi : F^r                    & \to V \\
-            (\alpha_1, \ldots, \alpha_r)  & \mapsto \alpha\textbf{v}_1 +
-            \cdots + \alpha_r\textbf{v}_r
+            (\alpha_1, \ldots, \alpha_r)  & \mapsto \alpha\mathbf{v}_1 +
+            \cdots + \alpha_r\mathbf{v}_r
         \end{align*}
         is a bijection.
 
@@ -193,11 +193,11 @@
         \begin{enumerate}
             \item $E$ is a basis, i.e.\ a linearly independent generating set;
             \item $E$ is minimal among all generating sets,
-                meaning that $E \ \setminus \{\textbf{v}\}$ does not generate $V$,
-                $\forall \textbf{v} \in E$;
+                meaning that $E \ \setminus \{\mathbf{v}\}$ does not generate $V$,
+                $\forall \mathbf{v} \in E$;
             \item $E$ is maximal among all linearly independent subsets,
-                meaning that $E \cup \{\textbf{v}\}$ is not linearly independent
-                $\forall \textbf{v} \in V$.
+                meaning that $E \cup \{\mathbf{v}\}$ is not linearly independent
+                $\forall \mathbf{v} \in V$.
         \end{enumerate}
 
     \item \textbf{Corollary 1.5.13} The existence of a basis \\
@@ -226,16 +226,16 @@
         This vector subspace is called the \emph{free vector space on the set} $X$.
 
     \item \textbf{Theorem 1.5.16} (Useful variant on Linear combinations of basis elements) \\
-        Let $F$ be a field, $V$ an $F$-vector space, and ${(\textbf{v}_i)}_{i\in I}$
+        Let $F$ be a field, $V$ an $F$-vector space, and ${(\mathbf{v}_i)}_{i\in I}$
         a family of vectors from the vector space $V$.
         The following are equivalent:
         \begin{enumerate}
-            \item The family $(\textbf{v}_i){i\in I}$ is a basis for $V$;
-            \item For each vector $\textbf{v} \in V$ there is precisely one family
+            \item The family $(\mathbf{v}_i){i\in I}$ is a basis for $V$;
+            \item For each vector $\mathbf{v} \in V$ there is precisely one family
                 ${(a_i)}_{i \in I}$ of elements of our field $F$,
                 almost all of which are zero and such that
                 \[
-                    \textbf{v} = \sum_{i \in I} a_i \textbf{v}_i
+                    \mathbf{v} = \sum_{i \in I} a_i \mathbf{v}_i
                 \]
         \end{enumerate}
 \end{itemize}
@@ -265,10 +265,10 @@
     \item \textbf{Lemma 1.6.3} Exchange lemma \\
         Let $V$ be a vector space, $M \subseteq V$ a linearly independent subset,
         and $E \subseteq V$ a generating subset, such that $M \subseteq E$.
-        If $\textbf{w} \in V \ \setminus M$ is a vector set not belonging to $M$ such that
-        $M \cup \{\textbf{w}\}$ is linearly independent, then there exists
-        $\textbf{e} \in E \ \setminus M$ such that
-        $\{E \ \setminus \{\textbf{e}\}\} \cup \{\textbf{w} \}$ is a generating set for $V$.
+        If $\mathbf{w} \in V \ \setminus M$ is a vector set not belonging to $M$ such that
+        $M \cup \{\mathbf{w}\}$ is linearly independent, then there exists
+        $\mathbf{e} \in E \ \setminus M$ such that
+        $\{E \ \setminus \{\mathbf{e}\}\} \cup \{\mathbf{w} \}$ is a generating set for $V$.
 
     \item \textbf{Corollary 1.6.4} Cardinality of bases \\
         Let $V$ be a finitely generated vector space.
@@ -311,10 +311,10 @@
     \item \textbf{Definition 1.7.1} \emph{Linear mapping} \\
         Let $V,W$ be vector spaces over a field $F$.
         A mapping $f: V \to W$ is called \emph{linear}
-        if for all $\textbf{v}_1, \textbf{v}_2 \in V$ and $\lambda \in F$ we have
+        if for all $\mathbf{v}_1, \mathbf{v}_2 \in V$ and $\lambda \in F$ we have
         \begin{align*}{}
-            f(\textbf{v}_1 + \textbf{v}_2) & = f(\textbf{v}_1) + f(\textbf{v}_2) \\
-            f(\lambda\textbf{v}_1)         & = \lambda f(\textbf{v}_1)
+            f(\mathbf{v}_1 + \mathbf{v}_2) & = f(\mathbf{v}_1) + f(\mathbf{v}_2) \\
+            f(\lambda\mathbf{v}_1)         & = \lambda f(\mathbf{v}_1)
         \end{align*}
         A bijective linear mapping is called an \emph{isomorphism} of vector spaces.
         If there is an isomorphism of vector spaces, we call them \emph{isomorphic}.
@@ -1583,7 +1583,8 @@
         \[
             \pi_U : V \to V
         \]
-        that sends $\mathbf{v} = \mathbf{p} + \mathbf{r}$ to $\mathbf{p}$.
+        that sends $\mathbf{v} = \mathbf{p} + \mathbf{r}$ to $\mathbf{p}$. \\
+        (With $\mathbf{v} \in U \oplus U^\perp, \ p \in U, \ r \in U^\perp$.)
 
     \item \textbf{Proposition 5.2.4} \\
         Let $U$ be a finite-dimensional subspace of an inner product space $V$ and let
@@ -1629,9 +1630,23 @@
             \langle \mathbf{v}_{i-1}, \ldots, \mathbf{v}_1 \rangle
         \]
 
+    \item \textbf{Gram-Schmidt process}
+        \begin{align*}{}
+            \mathbf{u}_1 &= \mathbf{v}_1, & \mathbf{e}_1
+                         &= \frac{\mathbf{u}_1}{\lVert \mathbf{u}_1 \rVert} \\
+            \mathbf{u}_2 &= \mathbf{v}_2 - \pi_{\mathbf{u}_1}(\mathbf{v}_2), & \mathbf{e}_2
+                         &= \frac{\mathbf{u}_2}{\lVert \mathbf{u}_2 \rVert} \\
+            \mathbf{u}_3 &= \mathbf{v}_3 - \pi_{\mathbf{u}_1}(\mathbf{v}_3) -
+            \pi_{\mathbf{u}_2}(\mathbf{v}_3), & \mathbf{e}_3 &=
+            \frac{\mathbf{u}_3}{\lVert \mathbf{u}_3 \rVert} \\
+            & \ \vdots \\
+            \mathbf{u}_k &= \mathbf{v}_k - \sum_{j=1}^{k-1} \pi_{\mathbf{u}_j} (\mathbf{v}_k),
+                         & \mathbf{e}_k &= \frac{\mathbf{u}_k}{\lVert \mathbf{u}_k \rVert}
+        \end{align*}
+
 \end{itemize}
 
-\subsection{Adjoints and Self-Adjoints}
+\subsection{Adjoints \& Self-Adjoints}
 <++>
 
 \section{Reference}
