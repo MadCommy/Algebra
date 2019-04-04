@@ -40,6 +40,7 @@
         If the solution set of a linear system of equations is non-empty,
         then we obtain all solutions by adding component-wise an arbitrary solution
         of the associated homogenised system to a fixed solution of the system.
+
 \end{itemize}
 
 \subsection{Fields \& vector spaces}
@@ -106,6 +107,7 @@
         for all $\lambda \in F$.
         Furthermore, if $\lambda \mathbf{v} = \mathbf{0}$,
         then either $\lambda = 0$ or $\mathbf{v} = \mathbf{0}$.
+
 \end{itemize}
 
 \subsection{Products of sets and of vector spaces}
@@ -153,6 +155,7 @@
         \end{align*}
         In particular the intersection of the empty system of subsets of $X$ is $X$,
         and the union of the empty system of subsets $X$ is the empty set.
+
 \end{itemize}
 
 \subsection{Linear independence and bases}
@@ -238,6 +241,7 @@
                     \mathbf{v} = \sum_{i \in I} a_i \mathbf{v}_i
                 \]
         \end{enumerate}
+
 \end{itemize}
 
 \subsection{Dimension of a vector space}
@@ -302,6 +306,7 @@
         \[
             \text{dim}(U+W) + \text{dim}(U \cap W) = \text{dim}U + \text{dim}W
         \]
+
 \end{itemize}
 
 \subsection{Linear mappings}
@@ -357,6 +362,7 @@
             \item Every surjective linear mapping $f: V \to W$ has a \emph{right inverse},
                 in other words a linear mapping $g : W \to V$ such that $f \circ g = \text{id}_W$
         \end{enumerate}
+
 \end{itemize}
 
 \subsection{Rank-Nullity theorem}
@@ -451,6 +457,7 @@
             AI        & = A \\
             (AB)C     & = A(BC)
         \end{align*}
+
 \end{itemize}
 
 \subsection{Basic properties of matrices}
@@ -489,6 +496,7 @@
     \item \textbf{Definition 2.2.8} \emph{Full rank} \\
         Whenever the rank of a matrix is equal to the number of rows (or columns --- whichever is
         smaller), it has \emph{full rank}.
+
 \end{itemize}
 
 \subsection{Abstract linear mappings and matrices}
@@ -543,6 +551,7 @@
             _\mathcal{B}{[f(\textbf{v})]} = _\mathcal{B}{[f]}_\mathcal{A} \circ
             _\mathcal{A}[\textbf{v}]
         \]
+
 \end{itemize}
 
 \subsection{Change of a matrix by change of basis}
@@ -597,6 +606,7 @@
         \[
             \mathrm{tr}(A)
         \]
+
 \end{itemize}
 
 \section{Rings and Modules}
@@ -636,6 +646,7 @@
     \item \textbf{Proposition 3.1.11} \\
         Let $m \in \mathbb{Z}^+$.
         The commutative ring $\mathbb{Z} / m\mathbb{Z}$ is a field if and only if $m$ is prime.
+
 \end{itemize}
 
 \subsection{Properties of rings}
@@ -693,6 +704,7 @@
 
     \item \textbf{Theorem 3.2.18} \\
         Every \emph{finite} integral domain is a field.
+
 \end{itemize}
 
 \subsection{Polynomials}
@@ -762,6 +774,7 @@
         \]
         with $n \geq 0, c \in F^\times$ and $\lambda_1, \ldots, \lambda_n \in F$.
         This decomposition is unique up to reordering of the factors.
+
 \end{itemize}
 
 \subsection{Homomorphisms, Ideals, and Subrings}
@@ -881,6 +894,7 @@
                 In this case $f$ restricts to a group homomorphism
                 $f|_{R^\times} : R^\times \to S^\times$.
         \end{enumerate}
+
 \end{itemize}
 
 \subsection{Equivalence Relations}
@@ -930,6 +944,7 @@
         $g : (X/\sim) \to Z$ is \emph{well-defined} if there is a mapping
         $f : X \to Z$ such that $f$ has the property
         $x \sim y \implies f(x) = f(y)$ and $g = \overline{f}$.
+
 \end{itemize}
 
 \subsection{Factor Rings and the First Isomorphic Theorem}
@@ -999,11 +1014,13 @@
         \[
             \overline{f} : R / \ker f \tilde{\to} \mathrm{im} f
         \]
+
 \end{itemize}
 
 \subsection{Modules}
 
 \begin{itemize}
+
     \item \textbf{Definition 3.7.1}
         A \emph{(left) module $M$ over a ring $R$} is a pair consisting of an abelian group
         $M = (M, \dot{+})$ and a mapping
@@ -1135,6 +1152,7 @@
         \[
             \overline{f} : M / \ker f \to \mathrm{im} f
         \]
+
 \end{itemize}
 
 \section{Determinants \& Eigenvalues Redux}
@@ -1142,6 +1160,7 @@
 \subsection{The sign of a permutation}
 
 \begin{itemize}
+
     \item \textbf{Definition 4.1.1} \emph{Transposition} \\
         The group of all permutations of the set $\{1,2,\ldots,n\}$, also known as bijections from
         $\{1,2,\ldots,n\}$ to itself, is denoted by $\mathfrak{S}_n$ and called the
@@ -1192,6 +1211,7 @@
 \subsection{Determinants \& what they mean}
 
 \begin{itemize}
+
     \item \textbf{Definition 4.2.1}
         Let $R$ be a commutative ring and $n \in \mathbb{N}$. \\
         The \emph{determinant} is a mapping
@@ -1199,11 +1219,11 @@
         to the ring $R$ that is given by the following formula:
         \[
             A =
-            \begin{bmatrix}
+            \begin{pmatrix}
                 a_{11} & \cdots & a_{1n} \\
                 \vdots & \ddots & \vdots \\
                 a_{n1} & \cdots & a_{nn} \\
-            \end{bmatrix}
+            \end{pmatrix}
             \mapsto \det (A) =
             \sum_{\sigma \in \mathfrak{S}_n}
             \mathrm{sgn}(\sigma) a_{1\sigma(1)} \ldots a_{n\sigma(n)}
@@ -1410,13 +1430,13 @@
                 $\mathcal{B}$ is upper triangular.
                 \[
                     A =
-                    \begin{bmatrix}{}
+                    \begin{pmatrix}{}
                         a_{11} & a_{12} & a_{13} & \cdots & a_{1n} \\
                         0      & a_{22} & a_{23} & \cdots & a_{1n} \\
                         0      & 0      & a_{33} & \cdots & a_{1n} \\
                         \vdots & \vdots & \vdots & \ddots & \vdots \\
                         0      & 0      & 0      & \cdots & a_{nn}
-                    \end{bmatrix}
+                    \end{pmatrix}
                 \]
                 When this happens, $f$ is \emph{triangularisable}.
 
@@ -1476,9 +1496,9 @@
         \begin{enumerate}
             \item $(\lambda \mathbf{x} + \mu \mathbf{y}, \mathbf{z}) =
                 \lambda(\mathbf{x}, \mathbf{z}) + \mu(\mathbf{y}, \mathbf{z})$
-                \quad (associative)
+                \quad (bi-linear)
             \item $(\mathbf{x}, \mathbf{y}) = (\mathbf{y}, \mathbf{x})$
-                \quad (commutative)
+                \quad (symmetric)
             \item $(\mathbf{x}, \mathbf{x}) \geq 0$,
                 with equality if and only if $\mathbf{x} = \mathbf{0}$.
                 \quad (positive definite)
@@ -1496,9 +1516,9 @@
         \begin{enumerate}
             \item $(\lambda \mathbf{x} + \mu \mathbf{y}, \mathbf{z}) =
                 \lambda(\mathbf{x}, \mathbf{z}) + \mu(\mathbf{y}, \mathbf{z})$
-                \quad (associative)
+                \quad (bi-linear)
             \item $(\mathbf{x}, \mathbf{y}) = \overline{(\mathbf{y}, \mathbf{x})}$
-                \quad (commutative)
+                \quad (symmetric)
             \item $(\mathbf{x}, \mathbf{x}) \geq 0$,
                 with equality if and only if $\mathbf{x} = \mathbf{0}$.
                 \quad (positive definite)
@@ -1639,7 +1659,7 @@
             \mathbf{u}_3 &= \mathbf{v}_3 - \pi_{\mathbf{u}_1}(\mathbf{v}_3) -
             \pi_{\mathbf{u}_2}(\mathbf{v}_3), & \mathbf{e}_3 &=
             \frac{\mathbf{u}_3}{\lVert \mathbf{u}_3 \rVert} \\
-            & \ \vdots \\
+                                              & \ \vdots & & \ \vdots \\
             \mathbf{u}_k &= \mathbf{v}_k - \sum_{j=1}^{k-1} \pi_{\mathbf{u}_j} (\mathbf{v}_k),
                          & \mathbf{e}_k &= \frac{\mathbf{u}_k}{\lVert \mathbf{u}_k \rVert}
         \end{align*}
@@ -1647,7 +1667,77 @@
 \end{itemize}
 
 \subsection{Adjoints \& Self-Adjoints}
-<++>
+
+\begin{itemize}
+
+    \item \textbf{Definition 5.3.1} \emph{Adjoint} \\
+        Let $V$ be an inner product space.
+        Then two endomorphisms $T, S : V \to V$ are called \emph{adjoint} to one another
+        if the following holds for all $\vec{v}, \vec{w} \in V$:
+        \[
+            (T \vec{v}, \vec{w}) = (\vec{v}, S \vec{w})
+        \]
+        In this case, $S = T^*$, and $S$ is the \emph{adjoint} of $T$.
+
+    \item \textbf{Theorem 5.3.4} Existence of the adjoint \\
+        Let $V$ be a finite dimensional inner product space.
+        Let $T : V \to V$ be an endomorphism.
+        Then $T^*$ exists.
+        That is, there exists a unique linear mapping $T^* : V \to V$ such that for all
+        $\vec{v}, \vec{w} \in V$
+        \[
+            (T \vec{v}, \vec{w}) = (\vec{v}, T^* \vec{w})
+        \]
+
+    \item \textbf{Definition 5.3.5} \emph{Self-adjoint} \\
+        An endomorphism of an inner product space $T : V \to V$ is \emph{self-adjoint}
+        if it is equal to its own adjoint, that is if $T^* = T$.
+
+    \item \textbf{Theorem 5.3.7} \\
+        Let $T : V \to V$ be a self-adjoint linear mapping of an inner product space $V$.
+        \begin{enumerate}
+            \item Every eigenvalue of $T$ is real.
+            \item If $\lambda$ and $\mu$ are distinct Eigenvalues of $T$ with corresponding
+                eigenvectors $\vec{v}$ and $\vec{w}$, then $\vec{v}, \vec{w} = 0$.
+            \item $T$ has an eigenvalue.
+        \end{enumerate}
+
+    \item \textbf{Theorem 5.3.9} The Spectral Theorem for Self-Adjoint Endomorphisms \\
+        Let $V$ be a finite dimensional inner product space and let $T : V \to V$ be a
+        self-adjoint linear mapping.
+        Then $V$ has an orthogonal basis consisting of eigenvectors of $T$.
+
+    \item \textbf{Definition 5.3.11} \emph{Orthogonal matrix} \\
+        An \emph{orthogonal matrix} is an $n \times n$ matrix $P$ with real entries
+        such that $P^T P = I_n$.
+        In other words, and orthogonal matrix is a square matrix $P$ with real entries such that
+        $P^{-1} = P^T$.
+
+    \item \textbf{Corollary 5.3.12} The Spectral Theorem for Real Symmetric Matrices \\
+        Let $A$ be a real $(n \times n)$-symmetric matrix.
+        Then there is an $(n \times n)$-orthogonal matrix $P$ such that
+        \[
+            P^T AP = P^{-1} AP = \mathrm{diag}(\lambda_1, \ldots, \lambda_n)
+        \]
+        where $\lambda_1, \ldots, \lambda_n$ are the (necessarily real) eigenvalues of $A$,
+        repeated according to their multiplicity as roots of the characteristic polynomial of $A$.
+
+    \item \textbf{Definition 5.3.14} \emph{Unitary matrix} \\
+        A \emph{unitary matrix} is an $(n \times n)$-matrix $P$ with complex entries such that
+        $\overline{P}^T P = I_n$.
+        In other words, a unitary matrix is a square matrix $P$ with complex entries such that
+        $P^{-1} = \overline{P}^T$.
+
+    \item \textbf{Corollary 5.3.15} The Spectral Theorem for Hermitian Matrices \\
+        Let $A$ be an $(n \times n)$-hermitian matrix.
+        Then there is an $(n \times n)$-unitary matrix $P$ such that
+        \[
+            \overline{P}^T AP = P^{-1} AP = \mathrm{diag}(\lambda_1, \ldots, \lambda_n)
+        \]
+        where $\lambda_1, \ldots, \lambda_n$ are the (necessarily real) eigenvalues of $A$,
+        repeated according to their multiplicity as roots of the characteristic polynomial of $A$.
+
+\end{itemize}
 
 \section{Reference}
 
