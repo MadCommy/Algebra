@@ -117,8 +117,8 @@
 \begin{itemize}
 
     \item \textbf{Definition 1.4.1} \emph{Vector subspaces} \\
-        A subset $U$ of a vector space $V$ is called a \emph{vector subspace} or \emph{subspace}
-        if $U$ contains $\mathbf{0}$ and
+        A subset $U$ of a vector space $V$ is called a \emph{vector subspace} or
+        \emph{subspace} if $U$ contains $\mathbf{0}$ and
         \[
             \mathbf{u}, \mathbf{v} \in U \ \math{and} \ \lambda \in F \implies
             \mathbf{u} + \mathbf{v} \in U \ \math{and} \ \lambda \mathbf{u} \in U
@@ -139,19 +139,21 @@
     \item \textbf{Definition 1.4.7} \emph{Generating set} \\
         A subset of a vector space is called a \emph{generating set} of our vector space if its
         span is all of the vector space.
-        A vector space that has a finite generating set is said to be \emph{finitely generated}.
+        A vector space that has a finite generating set is said to be
+        \emph{finitely generated}.
 
     \item \textbf{Definition 1.4.9} \\
         The set of all subsets $\mathcal{P}(X) = \{U : U \subseteq X \}$ of $X$ is the
         \emph{power set} of $X$. \\
         A subset of $\mathcal{P}(X)$ is a \emph{system of subsets of} $X$. \\
-        Given such a system $\mathcal{U} \subseteq \mathcal{P}(X)$ we can create two new subsets
-        of $X$,
+        Given such a system $\mathcal{U} \subseteq \mathcal{P}(X)$ we can create two new
+        subsets of $X$,
         the \emph{union} and the \emph{intersection} of the sets of our system $\mathcal{U}$:
         \begin{align*}{}
             \bigcup_{U \in \mathcal{U}} U &=
             \{x \in X : \exists U \in \mathcal{U} \ldotp x \in U\} \\
-            \bigcap_{U \in \mathcal{U}} U &= \{x \in X : x \in U \ \forall \ U \in \mathcal{U}\}
+            \bigcap_{U \in \mathcal{U}} U &=
+            \{x \in X : x \in U \ \forall \ U \in \mathcal{U}\}
         \end{align*}
         In particular the intersection of the empty system of subsets of $X$ is $X$,
         and the union of the empty system of subsets $X$ is the empty set.
@@ -327,15 +329,16 @@
         An isomorphism of a vector space to itself is called an \emph{automorphism}.
 
     \item \textbf{Definition 1.7.5} \emph{Fixed point} \\
-        A point that is sent to itself by a mapping is called a \emph{fixed point} of the mapping.
+        A point that is sent to itself by a mapping is called a \emph{fixed point} of the
+        mapping.
         Given a mapping $f: X \to X$, we denote the set of fixed points by
         \[
             X^f = \{x \in X : f(x) = x\}
         \]
 
     \item \textbf{Definition 1.7.6} \emph{Complementary} \\
-        Two vector subspace $V_1, V_2$ of a vector space $V$ are \emph{complementary} if addition
-        defines a bijection
+        Two vector subspace $V_1, V_2$ of a vector space $V$ are \emph{complementary} if
+        addition defines a bijection
         \[
             V_1 \times V_2 \to V
         \]
@@ -352,15 +355,17 @@
             \text{Hom}_F(V,W) & = \text{Hom}(V,W) \subseteq \text{Maps}(V,W) \\
             f                 & \mapsto f|_B
         \end{align*}
-        In other words, each linear mapping determines and is completely determined by the values
-        it takes on a basis.
+        In other words, each linear mapping determines and is completely determined by the
+        values it takes on a basis.
 
     \item \textbf{Proposition 1.7.9}
         \begin{enumerate}
             \item Every injective linear mapping $f : V \to W$ has a \emph{left inverse},
-                in other words a linear mapping $g : W \to V$ such that $g \circ f = \text{id}_V$
+                in other words a linear mapping
+                $g : W \to V$ such that $g \circ f = \text{id}_V$
             \item Every surjective linear mapping $f: V \to W$ has a \emph{right inverse},
-                in other words a linear mapping $g : W \to V$ such that $f \circ g = \text{id}_W$
+                in other words a linear mapping
+                $g : W \to V$ such that $f \circ g = \text{id}_W$
         \end{enumerate}
 
 \end{itemize}
@@ -418,7 +423,8 @@
         \end{align*}
         This attaches to each linear mapping $f$ its \emph{representing matrix}
         $\mathrm{M}(f) \equiv [f]$.
-        The columns of this matrix are the images under $f$ of the standard basis elements of $F^m$
+        The columns of this matrix are the images under $f$ of the standard basis elements of
+        $F^m$
         \[
             [f] \equiv (f(\textbf{e}_1)|f(\textbf{e}_2)| \cdots | f(\textbf{e}_m))
         \]
@@ -441,7 +447,8 @@
 
     \item \textbf{Theorem 2.1.8} Composition of linear mappings and products of matrices \\
         Let $g : F^l \to F^m$ and $f : F^m \to F^n$ be linear mappings.
-        The representing matrix of their composition is the product of their representing matrices
+        The representing matrix of their composition is the product of their representing
+        matrices
         \[
             [f \circ g] = [f] \circ [g]
         \]
@@ -477,25 +484,26 @@
 
     \item \textbf{Definition 2.2.4} \emph{Smith Normal Form} \\
         Any matrix whose only non-zero entries lie on the diagonal,
-        and which has first 1s on along the diagonal followed by 0s is in \emph{Smith Normal Form}.
+        and which has first 1s on along the diagonal followed by 0s is in
+        \emph{Smith Normal Form}.
 
     \item \textbf{Theorem 2.2.5} Transformation of a matrix into Smith-Normal form \\
         For each matrix $A \in \mathrm{Mat}(n \times m; F)$ there exist invertible matrices
-        $P$ and $Q$ such that $PAQ$ is a matrix in Smith Normal Form and $Q$ such that $PAQ$ is a
-        matrix in Smith Normal Form.
+        $P$ and $Q$ such that $PAQ$ is a matrix in Smith Normal Form and $Q$ such that $PAQ$
+        is a matrix in Smith Normal Form.
 
     \item \textbf{Definition 2.2.6} \emph{Rank} \\
         The \emph{column rank} of a matrix $A \in \mathrm{Mat}(n \times m; F)$
         is the dimension of the subspace of $F^n$ generated by the columns of $A$.
-        Similarly, the \emph{row rank} of $A$ is the dimension of the subspace of $F^m$ generated
-        by the rows of $A$.
+        Similarly, the \emph{row rank} of $A$ is the dimension of the subspace of $F^m$
+        generated by the rows of $A$.
 
     \item \textbf{Theorem 2.2.7} \\
         The column rank and the row rank of any matrix are equal.
 
     \item \textbf{Definition 2.2.8} \emph{Full rank} \\
-        Whenever the rank of a matrix is equal to the number of rows (or columns --- whichever is
-        smaller), it has \emph{full rank}.
+        Whenever the rank of a matrix is equal to the number of rows (or columns --- whichever
+        is smaller), it has \emph{full rank}.
 
 \end{itemize}
 
@@ -544,8 +552,8 @@
         vector $\textbf{v}$ with respect to the basis $\mathcal{A}$}.
 
     \item \textbf{Theorem 2.3.4} Representation of the image of a vector \\
-        Let $V,W$ be finite-dimensional vector-spaces over $F$ with ordered bases $\mathcal{A,B}$
-        and let $f : V \to W$ be a linear mapping.
+        Let $V,W$ be finite-dimensional vector-spaces over $F$ with ordered bases
+        $\mathcal{A,B}$ and let $f : V \to W$ be a linear mapping.
         The following holds for $\textbf{v} \in V$:
         \[
             _\mathcal{B}{[f(\textbf{v})]} = _\mathcal{B}{[f]}_\mathcal{A} \circ
@@ -578,7 +586,8 @@
         Then
         \[
             _\mathcal{B'}{[f]}_\mathcal{A'} = _\mathcal{B'}{[\mathrm{id}_W]}_\mathcal{B} \circ
-            _\mathcal{B}{[\mathrm{f}]}_\mathcal{A} \circ _\mathcal{A}{[\mathrm{id}_V]}_\mathcal{A'}
+            _\mathcal{B}{[\mathrm{f}]}_\mathcal{A} \circ
+            _\mathcal{A}{[\mathrm{id}_V]}_\mathcal{A'}
         \]
 
     \item \textbf{Corollary 2.4.4}
@@ -636,7 +645,8 @@
         A ring in which multiplication is commutative is a \emph{commutative ring}. \\
 
     \item \textbf{Proposition 3.1.7} Divisibility by sum \\
-        A natural number is divisible by 3 (respectively 9) precisely when the sum of its digits is
+        A natural number is divisible by 3 (respectively 9) precisely when the sum of its
+        digits is
         divisible by 3 (respectively 9).
 
     \item \textbf{Definition 3.1.8} \emph{Field} \\
@@ -683,8 +693,8 @@
 
     \item \textbf{Definition 3.2.6} \emph{Unit} \\
         Let $R$ be a ring.
-        An element $a \in R$ is called a \emph{unit} if it is invertible in $R$ or (in other words)
-        has a multiplicative inverse in $R$.
+        An element $a \in R$ is called a \emph{unit} if it is invertible in $R$ or (in other
+        words) has a multiplicative inverse in $R$.
 
     \item \textbf{Proposition 3.2.10} \\
         The set $R^\times$ of units in a ring $R$ forms a group under multiplication.
@@ -719,8 +729,8 @@
         \]
         for some $m \in \mathbb{N}$ and elements $a_i \in R$ for $i \in [0,m]$.\\
         The set of all polynomials over $R$ is denoted by $R[X]$.\\
-        In case $a_m$ is non-zero, the polynomial $P$ has \emph{degree} $m$, written $\deg(P)$, and
-        $a_m$ is its \emph{leading coefficient}. \\
+        In case $a_m$ is non-zero, the polynomial $P$ has \emph{degree} $m$, written
+        $\deg(P)$, and $a_m$ is its \emph{leading coefficient}. \\
         When the leading coefficient is 1, the polynomial is a \emph{monic polynomial}.\\
         A polynomial of degree one is called \emph{linear},
         a polynomial of degree two is called \emph{quadratic},
@@ -744,7 +754,8 @@
 
     \item \textbf{Definition 3.3.6} \\
         Let $R$ be a commutative ring and $P \in R[X]$ a polynomial.
-        Then the polynomial $P$ can be \emph{evaluated} at $\lambda \in R$ to produce $P(\lambda)$
+        Then the polynomial $P$ can be \emph{evaluated} at $\lambda \in R$ to produce
+        $P(\lambda)$
         by replacing the powers of $X$ in the polynomial $P$ by the corresponding powers of
         $\lambda$.
         This gives a mapping
@@ -759,8 +770,8 @@
 
     \item \textbf{Theorem 3.3.10} \\
         Let $R$ a ring, or more generally, an integral domain.
-        Then an non-zero polynomial $P \in R[X] \ \setminus \{0\}$ has at most $\deg(P)$ roots in
-        $R$.
+        Then an non-zero polynomial $P \in R[X] \ \setminus \{0\}$ has at most $\deg(P)$
+        roots in $R$.
 
     \item \textbf{Definition 3.3.11} \emph{Algebraically closed} \\
         A field $F$ is \emph{algebraically closed} if each non-constant polynomial
@@ -821,8 +832,8 @@
             \item $\forall i \in I$ and $\forall r \in R$ we have $ri, ir \in I$
                 ($I$ is closed under multiplication by elements of $R$)
         \end{enumerate}
-        Ideals satisfy the properties of rings, except possibly the existence of a multiplicative
-        identity.
+        Ideals satisfy the properties of rings, except possibly the existence of a
+        multiplicative identity.
 
         Ideals are subrings which are closed under multiplication with elements from the
         \emph{ring} --- not just elements from within the ideal!
@@ -903,7 +914,8 @@
 
     \item \textbf{Definition 3.5.1} \emph{Relation} \\
         A \emph{relation} $R$ on a set $X$ is a subset $R \subseteq X \times X$.
-        $R$ is an \emph{equivalence relation on $X$} when $\forall x,y,z \in X$ the following hold:
+        $R$ is an \emph{equivalence relation on $X$} when $\forall x,y,z \in X$
+        the following hold:
         \begin{enumerate}
             \item \emph{Reflexivity}: $xRx$
             \item \emph{Symmetry}: $xRy \iff yRx$
@@ -920,12 +932,12 @@
 
         An element of an equivalence class is called a \emph{representative} of the class.
 
-        A subset $Z \subseteq X$ containing precisely one element from each equivalence class is
-        called a \emph{system of representatives} for the equivalence relation.
+        A subset $Z \subseteq X$ containing precisely one element from each equivalence class
+        is called a \emph{system of representatives} for the equivalence relation.
 
     \item \textbf{Definition 3.5.5} \emph{Set of equivalence classes} \\
-        Given an equivalence relation $\sim$ on the set $X$, the \emph{set of equivalence classes},
-        which is a subset of $\mathcal{P}(X)$, is
+        Given an equivalence relation $\sim$ on the set $X$, the
+        \emph{set of equivalence classes}, which is a subset of $\mathcal{P}(X)$, is
         \[
             (X/\sim) \equiv \{E(x) : x \in X\}
         \]
@@ -938,7 +950,8 @@
         then there is a unique mapping $\overline{f} : (X \ \setminus \sim) \to Z$
         with $f = \overline{f} \circ \mathrm{can}$.
         Its definition is easy: $f(E(x)) = f(x)$.
-        This property is called the \emph{universal property of the set of equivalence classes}.
+        This property is called the \emph{universal property of the set of equivalence
+        classes}.
 
     \item \textbf{Definition 3.5.7} \emph{Well-defined} \\
         $g : (X/\sim) \to Z$ is \emph{well-defined} if there is a mapping
@@ -978,9 +991,8 @@
         \emph{the coset of $x$ with respect to $I$ in $R$}.
 
     \item \textbf{Definition 3.6.3} \emph{Factor ring} \\
-        Let $R$ be a ring, $I \trianglelefteq R$ be an ideal, and $\sim$ the equivalence relation
-        defined by
-        $x \sim y \iff x-y \in I$.
+        Let $R$ be a ring, $I \trianglelefteq R$ be an ideal, and $\sim$ the equivalence
+        relation defined by $x \sim y \iff x-y \in I$.
         Then $R/I$, the \emph{factor ring of $R$ by $I$} or the \emph{quotient of $R$ by $I$},
         is the set $(R \ / \sim)$ of cosets of $I$ in $R$.
         \[
@@ -1058,8 +1070,9 @@
         If $f$ is a bijection then it is an \emph{isomorphism}.
 
     \item \textbf{Definition 3.7.15} \\
-        A non-empty subset $M'$ of an $R$-module $M$ is a \emph{submodule} if $M'$ is an $R$-module
-        with respect to the operations of the $R$-module $M$ \emph{restricted} to $M'$.
+        A non-empty subset $M'$ of an $R$-module $M$ is a \emph{submodule} if $M'$ is an
+        $R$-module with respect to the operations of the $R$-module $M$ \emph{restricted} to
+        $M'$.
 
     \item \textbf{Proposition 3.7.20} Test for a submodule \\
         Let $R$ be a ring and let $M$ be an $R$-module.
@@ -1138,8 +1151,8 @@
     \item \textbf{Theorem 3.7.32} The Universal Property of Factor Modules \\
         Let $R$ be a ring, and let $L$ and $M$ be $R$-modules, and $N$ a sub-module of $M$.
         \begin{enumerate}
-            \item The mapping $\mathrm{can} : M \to M/N$ sending $a$ to $a+N, \ \forall a \in M$
-                is a surjective $R$-homomorphism with kernel $N$.
+            \item The mapping $\mathrm{can} : M \to M/N$ sending $a$ to
+                $a+N, \ \forall a \in M$ is a surjective $R$-homomorphism with kernel $N$.
             \item If $f : M \to L$ is an $R$-homomorphism with $f(N) = \{0_L\}$,
                 so that $N \subseteq \ker f$,
                 then there is a unique homomorphism $\overline{f} : M/N \to L$
@@ -1162,8 +1175,8 @@
 \begin{itemize}
 
     \item \textbf{Definition 4.1.1} \emph{Transposition} \\
-        The group of all permutations of the set $\{1,2,\ldots,n\}$, also known as bijections from
-        $\{1,2,\ldots,n\}$ to itself, is denoted by $\mathfrak{S}_n$ and called the
+        The group of all permutations of the set $\{1,2,\ldots,n\}$, also known as bijections
+        from $\{1,2,\ldots,n\}$ to itself, is denoted by $\mathfrak{S}_n$ and called the
         \emph{$n$-th symmetric group}.
         It is a group under composition and has $n$! elements.
 
@@ -1201,8 +1214,8 @@
         \]
 
     \item \textbf{Definition 4.1.7} \emph{Alternating group} \\
-        For $n \in \mathbb{N}$, the set of even permutations in $\mathfrak{S}_n$ forms a subgroup
-        of $\mathfrak{S}_n$ because it is the kernel of the group homomorphism
+        For $n \in \mathbb{N}$, the set of even permutations in $\mathfrak{S}_n$ forms a
+        subgroup of $\mathfrak{S}_n$ because it is the kernel of the group homomorphism
         $\mathrm{sgn} : \mathfrak{S}_n \to \{+1, -1\}$.
         This group is the \emph{alternating group} and is denoted $A_n$.
 
@@ -1229,7 +1242,8 @@
             \mathrm{sgn}(\sigma) a_{1\sigma(1)} \ldots a_{n\sigma(n)}
         \]
         This formula is called the \emph{Leibniz formula}. \\
-        The degenerate case $n=0$ assigns the value $1$ as the determinant of the ``empty matrix''.
+        The degenerate case $n=0$ assigns the value $1$ as the determinant of the
+        ``empty matrix''.
 
     \item \emph{The connection between determinants and volumes} \\
         The determinant of a matrix is equal to the scaling factor it performs.
@@ -1294,8 +1308,8 @@
         \[
             \det : \mathrm{Mat}(n;F) \to F
         \]
-        is the unique, alternating, multi-linear form on $n$-tuples of column vectors with values
-        in $F$ that takes the value $1_F$ on the identity matrix.
+        is the unique, alternating, multi-linear form on $n$-tuples of column vectors with
+        values in $F$ that takes the value $1_F$ on the identity matrix.
         \begin{enumerate}
             \item Is it a multi-linear form?
             \item Does it go from $F^n \times \cdots \times F^n \to F$?
@@ -1332,11 +1346,12 @@
         Let $i, j \in (1,n) \subset \mathbb{N}$.
         Then the $(i, j)$ \emph{cofactor of} $A$ is
         $C_{ij} = {(-1)}^{i+j} \det(A \langle i, j \rangle)$
-        where $A \langle i, j \rangle$ is the matrix obtained by deleting the $i$-th row and the
-        $j$-th column.
+        where $A \langle i, j \rangle$ is the matrix obtained by deleting the $i$-th row and
+        the $j$-th column.
 
     \item \textbf{Theorem 4.4.7} Laplace's expansion of the determinant \\
-        Let $A = (a_{ij})$ be an $(n \times n)$ matrix with entries from a commutative ring $R$.
+        Let $A = (a_{ij})$ be an $(n \times n)$ matrix with entries from a commutative ring
+        $R$.
 
         For a fixed $i$, the \emph{$i$-th row expansion of the determinant} is
         \[
@@ -1362,7 +1377,8 @@
     \item \textbf{Corollary 4.4.11} Invertibility of matrices \\
         A square matrix with entries in a commutative ring $R$ is invertible if and only if its
         determinant is a unit in $R$.
-        That is, $A \in \mathrm{Mat}(n; R)$ is invertible if and only if $\det(A) \in R^\times$.
+        That is, $A \in \mathrm{Mat}(n; R)$ is invertible if and only if
+        $\det(A) \in R^\times$.
 
 \end{itemize}
 
@@ -1391,8 +1407,8 @@
         closed field has an eigenvalue.
 
     \item \textbf{Definition 4.5.6} \emph{Characteristic polynomial} \\
-        Let $R$ be a commutative ring and let $A \in \mathrm{Mat}(n; R)$ be a square matrix with
-        entries in $R$.
+        Let $R$ be a commutative ring and let $A \in \mathrm{Mat}(n; R)$ be a square matrix
+        with entries in $R$.
         The polynomial $\det (A - x I_n) \in R[x]$ is called the
         \emph{characteristic polynomial of the matrix $A$}.
         It is denoted by
@@ -1471,9 +1487,10 @@
         Then the vectors $\textbf{v}_1, \ldots, \textbf{v}_n$ are linearly independent.
 
     \item \textbf{Theorem 4.6.9} Cayley-Hamilton Theorem \\
-        Let $A \in \mathrm{Mat}(n; R)$ be a square matrix with entries in a commutative ring $R$.
-        Then evaluating its characteristic polynomial $\chi_A(x) \in R[x]$ at the matrix $A$ gives
-        zero.
+        Let $A \in \mathrm{Mat}(n; R)$ be a square matrix with entries in a commutative ring
+        $R$.
+        Then evaluating its characteristic polynomial $\chi_A(x) \in R[x]$ at the matrix $A$
+        gives zero.
 
 \end{itemize}
 
@@ -1710,8 +1727,8 @@
     \item \textbf{Definition 5.3.11} \emph{Orthogonal matrix} \\
         An \emph{orthogonal matrix} is an $n \times n$ matrix $P$ with real entries
         such that $P^T P = I_n$.
-        In other words, and orthogonal matrix is a square matrix $P$ with real entries such that
-        $P^{-1} = P^T$.
+        In other words, and orthogonal matrix is a square matrix $P$ with real entries such
+        that $P^{-1} = P^T$.
 
     \item \textbf{Corollary 5.3.12} The Spectral Theorem for Real Symmetric Matrices \\
         Let $A$ be a real $(n \times n)$-symmetric matrix.
@@ -1720,7 +1737,8 @@
             P^T AP = P^{-1} AP = \mathrm{diag}(\lambda_1, \ldots, \lambda_n)
         \]
         where $\lambda_1, \ldots, \lambda_n$ are the (necessarily real) eigenvalues of $A$,
-        repeated according to their multiplicity as roots of the characteristic polynomial of $A$.
+        repeated according to their multiplicity as roots of the characteristic polynomial of
+        $A$.
 
     \item \textbf{Definition 5.3.14} \emph{Unitary matrix} \\
         A \emph{unitary matrix} is an $(n \times n)$-matrix $P$ with complex entries such that
@@ -1735,7 +1753,8 @@
             \overline{P}^T AP = P^{-1} AP = \mathrm{diag}(\lambda_1, \ldots, \lambda_n)
         \]
         where $\lambda_1, \ldots, \lambda_n$ are the (necessarily real) eigenvalues of $A$,
-        repeated according to their multiplicity as roots of the characteristic polynomial of $A$.
+        repeated according to their multiplicity as roots of the characteristic polynomial of
+        $A$.
 
 \end{itemize}
 
