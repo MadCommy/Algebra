@@ -27,7 +27,7 @@
 \maketitle
 \tableofcontents
 
-\break\
+\break{}
 
 \section{Vector Spaces}
 
@@ -68,6 +68,7 @@
             \lambda. 1_F  = \lambda \in F, \quad
             \forall \lambda, \mu \in F
         \]
+
         For every $\lambda \in F$ there exists $-\lambda \in F$ such that
         \[
             \lambda + (-\lmbda) = 0_F \in F
@@ -81,32 +82,32 @@
         A \emph{vector space} $V$ over a \emph{field} $F$
         is a pair consisting of an abelian group $V = (V,+)$ and a mapping
         \[
-            F \times V \to V : (\lambda, \mathbf{v}) \mapsto \lambda \mathbf{v}
+            F \times V \to V : (\lambda, \vec{v}) \mapsto \lambda \vec{v}
         \]
-        such that for all $\lambda, \mu \in F$ and $\mathbf{v}, \mathbf{w} \in V$
+        such that for all $\lambda, \mu \in F$ and $\vec{v}, \vec{w} \in V$
         the following identities hold:
         \begin{align*}{}
-            \lambda(\mathbf{v} + \mathbf{w}) & = (\lambda \mathbf{v}) + (\lambda \mathbf{w})
+            \lambda(\vec{v} + \vec{w}) & = (\lambda \vec{v}) + (\lambda \vec{w})
             \quad                            & \text{(distributivity)} \\
-            (\lambda + \mu) \mathbf{v}       & = (\lambda \mathbf{v}) + (\mu \mathbf{v})
+            (\lambda + \mu) \vec{v}       & = (\lambda \vec{v}) + (\mu \vec{v})
             \quad                            & \text{(distributivity)} \\
-            \lambda(\mu \mathbf{v})          & = (\lambda \mu) \mathbf{v}
+            \lambda(\mu \vec{v})          & = (\lambda \mu) \vec{v}
             \quad                            & \text{(associativity)} \\
-            1_F\mathbf{v}                    & = \mathbf{v}
+            1_F\vec{v}                    & = \vec{v}
         \end{align*}
         A vector space $V$ over a field $F$ is called an $F$-\emph{vector space}.
 
     \item \textbf{Lemma 1.2.2} Product with the scalar zero \\
-        If $V$ is a vector space and $\mathbf{v} \in V$, then $0\mathbf{v} = \mathbf{0}$
+        If $V$ is a vector space and $\vec{v} \in V$, then $0\vec{v} = \vec{0}$
 
     \item \textbf{Lemma 1.2.3} Product with the scalar $(-1)$ \\
-        If $V$ is a vector space and $\mathbf{v} \in V$, then $(-1)\mathbf{v} = -\mathbf{v}$.
+        If $V$ is a vector space and $\vec{v} \in V$, then $(-1)\vec{v} = -\vec{v}$.
 
     \item \textbf{Lemma 1.2.4} Product with the zero vector \\
-        If $V$ is a vector space over a field $F$, then $\lambda\mathbf{0} = \mathbf{0}$
+        If $V$ is a vector space over a field $F$, then $\lambda\vec{0} = \vec{0}$
         for all $\lambda \in F$.
-        Furthermore, if $\lambda \mathbf{v} = \mathbf{0}$,
-        then either $\lambda = 0$ or $\mathbf{v} = \mathbf{0}$.
+        Furthermore, if $\lambda \vec{v} = \vec{0}$,
+        then either $\lambda = 0$ or $\vec{v} = \vec{0}$.
 
 \end{itemize}
 
@@ -118,10 +119,10 @@
 
     \item \textbf{Definition 1.4.1} \emph{Vector subspaces} \\
         A subset $U$ of a vector space $V$ is called a \emph{vector subspace} or
-        \emph{subspace} if $U$ contains $\mathbf{0}$ and
+        \emph{subspace} if $U$ contains $\vec{0}$ and
         \[
-            \mathbf{u}, \mathbf{v} \in U \ \math{and} \ \lambda \in F \implies
-            \mathbf{u} + \mathbf{v} \in U \ \math{and} \ \lambda \mathbf{u} \in U
+            \vec{u}, \vec{v} \in U \ \math{and} \ \lambda \in F \implies
+            \vec{u} + \vec{v} \in U \ \math{and} \ \lambda \vec{u} \in U
         \]
 
     \item \textbf{Proposition 1.4.5} Generating a vector subspace from a subset \\
@@ -132,9 +133,9 @@
             \langle T \rangle = \langle T \rangle _F \subseteq V
         \]
         It can be described as the set of all vectors
-        $\alpha_1 \mathbf{v}_1 + \cdots + \alpha_r \mathbf{v}_r$ with
-        $\alpha_1, \ldots, \alpha_r \in F$ and $\mathbf{v}_1, \ldots, \mathbf{v}_r \in T$,
-        together with $\mathbf{0}$ in the case $T = \emptyset$.
+        $\alpha_1 \vec{v}_1 + \cdots + \alpha_r \vec{v}_r$ with
+        $\alpha_1, \ldots, \alpha_r \in F$ and $\vec{v}_1, \ldots, \vec{v}_r \in T$,
+        together with $\vec{0}$ in the case $T = \emptyset$.
 
     \item \textbf{Definition 1.4.7} \emph{Generating set} \\
         A subset of a vector space is called a \emph{generating set} of our vector space if its
@@ -142,7 +143,7 @@
         A vector space that has a finite generating set is said to be
         \emph{finitely generated}.
 
-    \item \textbf{Definition 1.4.9} \\
+    \item \textbf{Definition 1.4.9} \emph{Power Set \& System of Subsets} \\
         The set of all subsets $\mathcal{P}(X) = \{U : U \subseteq X \}$ of $X$ is the
         \emph{power set} of $X$. \\
         A subset of $\mathcal{P}(X)$ is a \emph{system of subsets of} $X$. \\
@@ -167,10 +168,10 @@
     \item \textbf{Definition 1.5.1} \emph{Linear independence} \\
         A subset $L$ of a vector space $V$ is \emph{linearly independent}
         if for all pairwise different vectors
-        $\mathbf{v}_1, \ldots, \mathbf{v}_r \in L$ and arbitrary vectors
-        $\alpha_1, \ldots, \mathbf{v}_r \in F$,
+        $\vec{v}_1, \ldots, \vec{v}_r \in L$ and arbitrary vectors
+        $\alpha_1, \ldots, \vec{v}_r \in F$,
         \[
-            \alpha_1 \mathbf{v}_1 + \cdots + \alpha_r \mathbf{v}_r = \mathbf{0} \implies
+            \alpha_1 \vec{v}_1 + \cdots + \alpha_r \vec{v}_r = \vec{0} \implies
             \alpha_1 = \cdots = \alpha_r = 0
         \]
 
@@ -183,13 +184,13 @@
 
     \item \textbf{Theorem 1.5.11} Linear combinations of basis elements \\
         Let $F$ be a field, $V$ be a vector space over $F$, and
-        $\mathbf{v}_1, \ldots, \mathbf{v}_r \in V$ vectors.
-        The family ${(\mathbf{v}_i)}_{1 \leq i \leq r}$ is a basis of $V$ if and only if the
+        $\vec{v}_1, \ldots, \vec{v}_r \in V$ vectors.
+        The family ${(\vec{v}_i)}_{1 \leq i \leq r}$ is a basis of $V$ if and only if the
         following ``evaluation'' mapping
         \begin{align*}{}
             \Phi : F^r                    & \to V \\
-            (\alpha_1, \ldots, \alpha_r)  & \mapsto \alpha\mathbf{v}_1 +
-            \cdots + \alpha_r\mathbf{v}_r
+            (\alpha_1, \ldots, \alpha_r)  & \mapsto \alpha\vec{v}_1 +
+            \cdots + \alpha_r\vec{v}_r
         \end{align*}
         is a bijection.
 
@@ -198,11 +199,11 @@
         \begin{enumerate}
             \item $E$ is a basis, i.e.\ a linearly independent generating set;
             \item $E$ is minimal among all generating sets,
-                meaning that $E \ \setminus \{\mathbf{v}\}$ does not generate $V$,
-                $\forall \mathbf{v} \in E$;
+                meaning that $E \ \setminus \{\vec{v}\}$ does not generate $V$,
+                $\forall \vec{v} \in E$;
             \item $E$ is maximal among all linearly independent subsets,
-                meaning that $E \cup \{\mathbf{v}\}$ is not linearly independent
-                $\forall \mathbf{v} \in V$.
+                meaning that $E \cup \{\vec{v}\}$ is not linearly independent
+                $\forall \vec{v} \in V$.
         \end{enumerate}
 
     \item \textbf{Corollary 1.5.13} The existence of a basis \\
@@ -219,7 +220,7 @@
                 $L \subseteq E$, then $L$ is  basis.
         \end{enumerate}
 
-    \item \textbf{Definition 1.5.15} \\
+    \item \textbf{Definition 1.5.15} \emph{Free vector space} \\
         Let $X$ be a set and $F$ a field.
         The set $\text{Maps}(X,F)$ of all mappings $f : X \to F$ becomes an $F$-vector space
         with the operations of point-wise addition and multiplication by a scalar.
@@ -231,16 +232,16 @@
         This vector subspace is called the \emph{free vector space on the set} $X$.
 
     \item \textbf{Theorem 1.5.16} (Useful variant on Linear combinations of basis elements) \\
-        Let $F$ be a field, $V$ an $F$-vector space, and ${(\mathbf{v}_i)}_{i\in I}$
+        Let $F$ be a field, $V$ an $F$-vector space, and ${(\vec{v}_i)}_{i\in I}$
         a family of vectors from the vector space $V$.
         The following are equivalent:
         \begin{enumerate}
-            \item The family $(\mathbf{v}_i){i\in I}$ is a basis for $V$;
-            \item For each vector $\mathbf{v} \in V$ there is precisely one family
+            \item The family ${(\vec{v}_i)}_{i\in I}$ is a basis for $V$;
+            \item For each vector $\vec{v} \in V$ there is precisely one family
                 ${(a_i)}_{i \in I}$ of elements of our field $F$,
                 almost all of which are zero and such that
                 \[
-                    \mathbf{v} = \sum_{i \in I} a_i \mathbf{v}_i
+                    \vec{v} = \sum_{i \in I} a_i \vec{v}_i
                 \]
         \end{enumerate}
 
@@ -271,10 +272,10 @@
     \item \textbf{Lemma 1.6.3} Exchange lemma \\
         Let $V$ be a vector space, $M \subseteq V$ a linearly independent subset,
         and $E \subseteq V$ a generating subset, such that $M \subseteq E$.
-        If $\mathbf{w} \in V \ \setminus M$ is a vector set not belonging to $M$ such that
-        $M \cup \{\mathbf{w}\}$ is linearly independent, then there exists
-        $\mathbf{e} \in E \ \setminus M$ such that
-        $\{E \ \setminus \{\mathbf{e}\}\} \cup \{\mathbf{w} \}$ is a generating set for $V$.
+        If $\vec{w} \in V \ \setminus M$ is a vector set not belonging to $M$ such that
+        $M \cup \{\vec{w}\}$ is linearly independent, then there exists
+        $\vec{e} \in E \ \setminus M$ such that
+        $\{E \ \setminus \{\vec{e}\}\} \cup \{\vec{w} \}$ is a generating set for $V$.
 
     \item \textbf{Corollary 1.6.4} Cardinality of bases \\
         Let $V$ be a finitely generated vector space.
@@ -303,6 +304,11 @@
         A proper vector subspace of a finite dimensional vector space has itself a strictly
         smaller dimension.
 
+
+    \item \textbf{Notation} \\
+        If $V$ is a vector space, and $U, W$ are subspaces of $V$, then we define $U+W$
+        to be the subspace $\langle U \cup W \rangle$ of $V$ generated by $U$ and $W$ together.
+
     \item \textbf{Theorem 1.6.11} The dimension theorem \\
         Let $V$ be a vector space containing vector subspaces $U, W \subseteq V$.  Then
         \[
@@ -318,10 +324,10 @@
     \item \textbf{Definition 1.7.1} \emph{Linear mapping} \\
         Let $V,W$ be vector spaces over a field $F$.
         A mapping $f: V \to W$ is called \emph{linear}
-        if for all $\mathbf{v}_1, \mathbf{v}_2 \in V$ and $\lambda \in F$ we have
+        if for all $\vec{v}_1, \vec{v}_2 \in V$ and $\lambda \in F$ we have
         \begin{align*}{}
-            f(\mathbf{v}_1 + \mathbf{v}_2) & = f(\mathbf{v}_1) + f(\mathbf{v}_2) \\
-            f(\lambda\mathbf{v}_1)         & = \lambda f(\mathbf{v}_1)
+            f(\vec{v}_1 + \vec{v}_2) & = f(\vec{v}_1) + f(\vec{v}_2) \\
+            f(\lambda\vec{v}_1)         & = \lambda f(\vec{v}_1)
         \end{align*}
         A bijective linear mapping is called an \emph{isomorphism} of vector spaces.
         If there is an isomorphism of vector spaces, we call them \emph{isomorphic}.
@@ -406,6 +412,8 @@
         $f^2 = f$.
 
 \end{itemize}
+
+\break{}
 
 \section{Linear Mappings and Matrices}
 
@@ -513,12 +521,12 @@
 
     \item \textbf{Theorem 2.3.1} Abstract linear mappings and matrices \\
         Let $F$ be a field, $V$ and $W$ vector spaces over $F$ with ordered bases
-        $\mathcal{A} = (\textbf{v}_1, \ldots, \textbf{v}_m)$ and
-        $\mathcal{B} = (\textbf{w}_1, \ldots, \textbf{w}_n)$.
+        $\mathcal{A} = (\vec{v}_1, \ldots, \vec{v}_m)$ and
+        $\mathcal{B} = (\vec{w}_1, \ldots, \vec{w}_n)$.
         Then to each linear mapping $f : V \to W$ we associated a \emph{representing matrix}
         $_\mathcal{B}{[f]}_\mathcal{A}$ whose entries $a_{ij}$ are defined by the identity
         \[
-            f(\textbf{v}_j) = a_{1j}\textbf{w}_1 + \cdots + a_{nj}\textbf{w}_n \in W
+            f(\vec{v}_j) = a_{1j}\vec{w}_1 + \cdots + a_{nj}\vec{w}_n \in W
         \]
         This produces a bijection, which is even an isomorphism of vector spaces
         \begin{align*}{}
@@ -539,25 +547,25 @@
             _\mathcal{B}{[f]}_\mathcal{A}
         \]
 
-    \item \textbf{Definition 2.3.3} \\
+    \item \textbf{Definition 2.3.3} \emph{Representation of a vector with respect to a basis} \\
         Let $V$ be a finite-dimensional vector spaces with an ordered basis
-        $\mathcal{A} = (\textbf{v}_1, \ldots, \textbf{v}_m)$
+        $\mathcal{A} = (\vec{v}_1, \ldots, \vec{v}_m)$
         We denote the inverse to the bijection
         $\Phi_\mathcal{A} : F^m \to V, {(\alpha_1, \ldots, \alpha_m)}^T \mapsto
-        \alpha_1\textbf{v}_1 + \cdots + \alpha_m\textbf{v}m$ by
+        \alpha_1\vec{v}_1 + \cdots + \alpha_m\vec{v}m$ by
         \[
-            \textbf{v} \mapsto _\mathcal{A}[\textbf{v}]
+            \vec{v} \mapsto _\mathcal{A}[\vec{v}]
         \]
-        The column vector $_\mathcal{A}[\textbf{v}]$ is called the \emph{representation of the
-        vector $\textbf{v}$ with respect to the basis $\mathcal{A}$}.
+        The column vector $_\mathcal{A}[\vec{v}]$ is called the \emph{representation of the
+        vector $\vec{v}$ with respect to the basis $\mathcal{A}$}.
 
     \item \textbf{Theorem 2.3.4} Representation of the image of a vector \\
         Let $V,W$ be finite-dimensional vector-spaces over $F$ with ordered bases
         $\mathcal{A,B}$ and let $f : V \to W$ be a linear mapping.
-        The following holds for $\textbf{v} \in V$:
+        The following holds for $\vec{v} \in V$:
         \[
-            _\mathcal{B}{[f(\textbf{v})]} = _\mathcal{B}{[f]}_\mathcal{A} \circ
-            _\mathcal{A}[\textbf{v}]
+            _\mathcal{B}{[f(\vec{v})]} = _\mathcal{B}{[f]}_\mathcal{A} \circ
+            _\mathcal{A}[\vec{v}]
         \]
 
 \end{itemize}
@@ -567,16 +575,16 @@
 \begin{itemize}
 
     \item \textbf{Definition 2.4.1} \emph{Change of basis matrix} \\
-        Let $\mathcal{A} = (\textbf{v}_1, \ldots, \textbf{v}_n)$ and $\mathcal{B} =
-        (\textbf{w}_1, \ldots, \textbf{w}_n)$
+        Let $\mathcal{A} = (\vec{v}_1, \ldots, \vec{v}_n)$ and $\mathcal{B} =
+        (\vec{w}_1, \ldots, \vec{w}_n)$
         be ordered bases of the same $F$-vector space $V$.
         Then the matrix representing the identity mapping with respect to these bases
         \[
             _\mathcal{B}{[\mathrm{id}_V]}_\mathcal{A}
         \]
         is called a \emph{change of basis matrix}.
-        By definition, its entries are given by the equalities $\textbf{v}_j =
-        \sum_{i=1}^n a_{ij}\textbf{w}_i$.
+        By definition, its entries are given by the equalities $\vec{v}_j =
+        \sum_{i=1}^n a_{ij}\vec{w}_i$.
 
     \item \textbf{Theorem 2.4.3} Change of basis \\
         Let $V$ and $W$ be finite-dimensional vector-spaces over $F$ and let $f : V \to W$
@@ -621,6 +629,8 @@
         if and only if there exists $d \in \mathbb{N}$ such that $f^d = 0$.
 
 \end{itemize}
+
+\break{}
 
 \section{Rings and Modules}
 
@@ -1172,6 +1182,8 @@
 
 \end{itemize}
 
+\break{}
+
 \section{Determinants \& Eigenvalues Redux}
 
 \subsection{The sign of a permutation}
@@ -1392,13 +1404,13 @@
     \item \textbf{Definition 4.5.1} \emph{Eigenvalue} \\
         Let $f : V \to V$ be an endomorphism of an $F$-vector space $V$.
         A scalar $\lambda \in F$ is an \emph{eigenvalue} of $f$ if and only if there exists
-        a non-zero vector $\textbf{v} \in V$ such that $f(\textbf{v}) = \lambda \textbf{v}$.
+        a non-zero vector $\vec{v} \in V$ such that $f(\vec{v}) = \lambda \vec{v}$.
 
         Each such vector is called an \emph{eigenvector of $f$ with eigenvalue $\lambda$}.
 
         For any $\lambda \in F$, the \emph{eigenspace of $f$ with eigenvalue $\lambda$} is
         \[
-            E(\lambda, f) = \{ \textbf{v} \in V \ : \ f(\textbf{v}) = \lambda \textbf{v} \}
+            E(\lambda, f) = \{ \vec{v} \in V \ : \ f(\vec{v}) = \lambda \vec{v} \}
         \]
         When $\lambda = 1$, this is equivalent to having a \emph{fixed-point mapping}.
 
@@ -1436,15 +1448,15 @@
         The following two statements are equivalent:
         \begin{enumerate}
             \item The vector space $V$ has an ordered basis
-                $\mathcal{B} = (\textbf{v}_1, \textbf{v}_2, \ldots, \textbf{v}_n)$ such that
+                $\mathcal{B} = (\vec{v}_1, \vec{v}_2, \ldots, \vec{v}_n)$ such that
                 \begin{align*}{}
-                    f(\textbf{v}_1) &= a_{11}\textbf{v}_1 \\
-                    f(\textbf{v}_2) &= a_{12}\textbf{v}_1 + a_{22}\textbf{v}_2 \\
+                    f(\vec{v}_1) &= a_{11}\vec{v}_1 \\
+                    f(\vec{v}_2) &= a_{12}\vec{v}_1 + a_{22}\vec{v}_2 \\
                                     &\vdots \\
-                    f(\textbf{v}_n) &= a_{1n}\textbf{v}_1 + a_{2n}\textbf{v}_2 + \cdots +
-                    a_{nn}\textbf{v}_n \in V
+                    f(\vec{v}_n) &= a_{1n}\vec{v}_1 + a_{2n}\vec{v}_2 + \cdots +
+                    a_{nn}\vec{v}_n \in V
                 \end{align*}
-                (so that the first basis vector $\textbf{v}_1$ is an eigenvector,
+                (so that the first basis vector $\vec{v}_1$ is an eigenvector,
                 with eigenvalue $a_{11}$) or equivalently such that the $n \times n$ matrix
                 $_\mathcal{B}{[f]}_\mathcal{B} = (a_{ij})$ representing $f$ with respect to
                 $\mathcal{B}$ is upper triangular.
@@ -1474,10 +1486,10 @@
         if and only if there exists a basis of $V$ consisting of eigenvectors of $f$.
 
         If $V$ is finite-dimensional, then this is the same as saying that there exists an
-        ordered basis $\mathcal{B} = \{ \textbf{v}_1, \ldots, \textbf{v}_n \}$
+        ordered basis $\mathcal{B} = \{ \vec{v}_1, \ldots, \vec{v}_n \}$
         such that the corresponding matrix representing $f$ is diagonal,
         that is $_\mathcal{B}{[f]}_\mathcal{B} = \mathrm{diag}(\lambda_1, \ldots, \lambda_n$).
-        In this case, of course, $f(\textbf{v}_i) = \lambda_i v_i$.
+        In this case, of course, $f(\vec{v}_i) = \lambda_i v_i$.
 
         A square matrix $A \in \mathrm{Mat}(n; F)$ is \emph{diagonalisable} if and only if
         the corresponding linear mapping $F^n \to F^n$ given by the left multiplication of $A$
@@ -1490,9 +1502,9 @@
 
     \item \textbf{Lemma 4.6.8} Linear independence of Eigenvectors \\
         Let $f : V \to V$ be an endomorphism of a vector space $V$ and let
-        $\textbf{v}_1, \ldots, \textbf{v}_n$ be eigenvectors of $f$ with pairwise different
+        $\vec{v}_1, \ldots, \vec{v}_n$ be eigenvectors of $f$ with pairwise different
         eigenvalues $\lambda_1, \ldots, \lambda_n$. \\
-        Then the vectors $\textbf{v}_1, \ldots, \textbf{v}_n$ are linearly independent.
+        Then the vectors $\vec{v}_1, \ldots, \vec{v}_n$ are linearly independent.
 
     \item \textbf{Theorem 4.6.9} Cayley-Hamilton Theorem \\
         Let $A \in \mathrm{Mat}(n; R)$ be a square matrix with entries in a commutative ring
@@ -1503,6 +1515,8 @@
 \end{itemize}
 
 \subsection{Google's PageRank Algorithm}
+
+\break{}
 
 \section{Inner Product Spaces}
 
@@ -1516,16 +1530,16 @@
         \[
             (-, -) : V \times V \to \mathbb{R}
         \]
-        that satisfies the following for all $\mathbf{x}, \mathbf{y}, \mathbf{z} \in V$
+        that satisfies the following for all $\vec{x}, \vec{y}, \vec{z} \in V$
         and $\lambda, \mu \in \mathbb{R}$:
         \begin{enumerate}
-            \item $(\lambda \mathbf{x} + \mu \mathbf{y}, \mathbf{z}) =
-                \lambda(\mathbf{x}, \mathbf{z}) + \mu(\mathbf{y}, \mathbf{z})$
+            \item $(\lambda \vec{x} + \mu \vec{y}, \vec{z}) =
+                \lambda(\vec{x}, \vec{z}) + \mu(\vec{y}, \vec{z})$
                 \quad (bi-linear)
-            \item $(\mathbf{x}, \mathbf{y}) = (\mathbf{y}, \mathbf{x})$
+            \item $(\vec{x}, \vec{y}) = (\vec{y}, \vec{x})$
                 \quad (symmetric)
-            \item $(\mathbf{x}, \mathbf{x}) \geq 0$,
-                with equality if and only if $\mathbf{x} = \mathbf{0}$.
+            \item $(\vec{x}, \vec{x}) \geq 0$,
+                with equality if and only if $\vec{x} = \vec{0}$.
                 \quad (positive definite)
         \end{enumerate}
         A \emph{real inner product space} is a real vector space endowed with an inner product.
@@ -1536,16 +1550,16 @@
         \[
             (-, -) : V \times V \to \mathbb{C}
         \]
-        that satisfies the following for all $\mathbf{x}, \mathbf{y}, \mathbf{z} \in V$
+        that satisfies the following for all $\vec{x}, \vec{y}, \vec{z} \in V$
         and $\lambda, \mu \in \mathbb{C}$:
         \begin{enumerate}
-            \item $(\lambda \mathbf{x} + \mu \mathbf{y}, \mathbf{z}) =
-                \lambda(\mathbf{x}, \mathbf{z}) + \mu(\mathbf{y}, \mathbf{z})$
+            \item $(\lambda \vec{x} + \mu \vec{y}, \vec{z}) =
+                \lambda(\vec{x}, \vec{z}) + \mu(\vec{y}, \vec{z})$
                 \quad (bi-linear)
-            \item $(\mathbf{x}, \mathbf{y}) = \overline{(\mathbf{y}, \mathbf{x})}$
+            \item $(\vec{x}, \vec{y}) = \overline{(\vec{y}, \vec{x})}$
                 \quad (symmetric)
-            \item $(\mathbf{x}, \mathbf{x}) \geq 0$,
-                with equality if and only if $\mathbf{x} = \mathbf{0}$.
+            \item $(\vec{x}, \vec{x}) \geq 0$,
+                with equality if and only if $\vec{x} = \vec{0}$.
                 \quad (positive definite)
         \end{enumerate}
         Here $\overline{z}$ denotes the complex conjugate of $z$.
@@ -1554,15 +1568,15 @@
 
     \item \textbf{Definition} \emph{Skew-linear} \\
         A mapping $f : V \to W$ between complex vector spaces is \emph{skew-linear}
-        if $f(\mathbf{v}_1 + \mathbf{v}_2) = f(\mathbf{v}_1) + f(\mathbf{v}_2)$
-        and $f(\lambda \mathbf{v}_1) = \overline{\lambda} f(\mathbf{v}_1)$
-        for all $\mathbf{v}_1, \mathbf{v}_2 \in V$ and all $\lambda \in \mathbb{C}$.
+        if $f(\vec{v}_1 + \vec{v}_2) = f(\vec{v}_1) + f(\vec{v}_2)$
+        and $f(\lambda \vec{v}_1) = \overline{\lambda} f(\vec{v}_1)$
+        for all $\vec{v}_1, \vec{v}_2 \in V$ and all $\lambda \in \mathbb{C}$.
 
     \item \textbf{Definition} \emph{Sesquilinear} \\
         A complex form that is \emph{skew-linear} in its second variable.
         When such a form is commutative, it is \emph{hermitian}.
 
-    \item \mathbf{Terminology}
+    \item \vec{Terminology}
         \begin{itemize}
             \item A finite-dimensional real inner product space is a
                 \emph{Euclidean vector space}.
@@ -1574,24 +1588,24 @@
 
     \item \textbf{Definition 5.1.5} \emph{Length or Inner Product Norm} \\
         In a real or complex inner product space the \emph{length} or \emph{inner product norm}
-        or \emph{norm} $\lVert \mathbf{v} \rVert \in \mathbb{R}$ of a vector $\textbf{v}$
+        or \emph{norm} $\lVert \vec{v} \rVert \in \mathbb{R}$ of a vector $\textbf{v}$
         is defined as the non-negative square root
         \[
-            \lVert \mathbf{v} \rVert = \sqrt{(\mathbf{v}, \mathbf{v})}
+            \lVert \vec{v} \rVert = \sqrt{(\vec{v}, \vec{v})}
         \]
         Vectors whose length is 1 are called \emph{units}.
-        Two vectors $\mathbf{v}, \mathbf{w}$ are \emph{orthogonal} and we write
+        Two vectors $\vec{v}, \vec{w}$ are \emph{orthogonal} and we write
         \[
-            \mathbf{v} \perp \mathbf{w}
+            \vec{v} \perp \vec{w}
         \]
-        if and only if $(\mathbf{v}, \mathbf{w}) = 0$.
+        if and only if $(\vec{v}, \vec{w}) = 0$.
 
     \item \textbf{Definition 5.1.7} \emph{Orthonormal family} \\
-        A family ${(\mathbf{v}_i)}_{i \in I}$ for vectors from an inner product space is an
+        A family ${(\vec{v}_i)}_{i \in I}$ for vectors from an inner product space is an
         \emph{orthogonal family} if all the vectors $\emph{v}_i$ have length 1 and if they
         are pairwise orthogonal to each other, which, using the Kronecker delta, means
         \[
-            (\mathbf{v}_i, \mathbf{v}_j) = \delta_{ij}
+            (\vec{v}_i, \vec{v}_j) = \delta_{ij}
         \]
         An orthonormal family that is a basis is an \emph{orthonormal basis}.
 
@@ -1608,8 +1622,8 @@
         let $V$ be an inner product space and let $T \subseteq V$ be an arbitrary subset.
         Define
         \[
-            T^\perp = \{\mathbf{v} \in V : \mathbf{v} \perp \mathbf{t}, \ \forall
-            \mathbf{t} \in T \},
+            T^\perp = \{\vec{v} \in V : \vec{v} \perp \vec{t}, \ \forall
+            \vec{t} \in T \},
         \]
         calling this set the \emph{orthogonal} to $T$.
 
@@ -1628,8 +1642,8 @@
         \[
             \pi_U : V \to V
         \]
-        that sends $\mathbf{v} = \mathbf{p} + \mathbf{r}$ to $\mathbf{p}$. \\
-        (With $\mathbf{v} \in U \oplus U^\perp, \ p \in U, \ r \in U^\perp$.)
+        that sends $\vec{v} = \vec{p} + \vec{r}$ to $\vec{p}$. \\
+        (With $\vec{v} \in U \oplus U^\perp, \ p \in U, \ r \in U^\perp$.)
 
     \item \textbf{Proposition 5.2.4} \\
         Let $U$ be a finite-dimensional subspace of an inner product space $V$ and let
@@ -1638,55 +1652,55 @@
             \item $\pi_U$ is a linear mapping with $\mathrm{im} (\pi_U) = U$ and
                 $\ker(\pi_U) = U^\perp$.
 
-            \item If $\{ \mathbf{v}_1, \ldots, \mathbf{v}_n\}$ is an orthonormal basis of $U$,
-                then $\pi_U$ is given by the following formula for all $\mathbf{v} \in V$
+            \item If $\{ \vec{v}_1, \ldots, \vec{v}_n\}$ is an orthonormal basis of $U$,
+                then $\pi_U$ is given by the following formula for all $\vec{v} \in V$
                 \[
-                    \pi_U(\mathbf{v}) = \sum_{i=1}^n (\mathbf{v}, \mathbf{v}_i) \mathbf{v}_i
+                    \pi_U(\vec{v}) = \sum_{i=1}^n (\vec{v}, \vec{v}_i) \vec{v}_i
                 \]
             \item $\pi_U^2 = \pi_U$, that is $\pi_U$ is an idempotent.
         \end{enumerate}
 
     \item \textbf{Theorem 5.2.5} Cauchy-Schwarz Inequality \\
-        Let $\mathbf{v}, \mathbf{w}$ be vectors in an inner product space. Then
+        Let $\vec{v}, \vec{w}$ be vectors in an inner product space. Then
         \[
-            |(\mathbf{v}, \mathbf{w})| \leq \lVert \mathbf{v} \rVert \lVert \mathbf{w} \rVert
+            |(\vec{v}, \vec{w})| \leq \lVert \vec{v} \rVert \lVert \vec{w} \rVert
         \]
-        with equality if and only if $\mathbf{v}$ and $\mathbf{w}$ are linearly dependent.
+        with equality if and only if $\vec{v}$ and $\vec{w}$ are linearly dependent.
 
     \item \textbf{Corollary 5.2.6} \\
         The norm $\lVert \cdot \rVert$ on an inner product space $V$ satisfies,
-        for any $\mathbf{v}, \mathbf{w} \in V$ and scalar $\lambda$:
+        for any $\vec{v}, \vec{w} \in V$ and scalar $\lambda$:
         \begin{enumerate}
-            \item $\lVert \mathbf{v} \rVert \geq 0$ with equality if and only if
-                $\mathbf{v} = \mathbf{0}$
-            \item $\lVert \lambda \mathbf{v} \rVert = |\lambda| \lVert \mathbf{v} \rVert$
-            \item $\lVert \mathbf{v} + \mathbf{w} \rVert \leq
-                \lVert \mathbf{v} \rVert + \lVert \mathbf{w} \rVert$,
+            \item $\lVert \vec{v} \rVert \geq 0$ with equality if and only if
+                $\vec{v} = \vec{0}$
+            \item $\lVert \lambda \vec{v} \rVert = |\lambda| \lVert \vec{v} \rVert$
+            \item $\lVert \vec{v} + \vec{w} \rVert \leq
+                \lVert \vec{v} \rVert + \lVert \vec{w} \rVert$,
                 the \emph{triangle inequality}.
         \end{enumerate}
 
     \item \textbf{Theorem 5.2.7} \\
-        Let $\mathbf{v}_1, \ldots, \mathbf{v}_k$ be linearly independent vectors in an
+        Let $\vec{v}_1, \ldots, \vec{v}_k$ be linearly independent vectors in an
         inner product space $V$.
-        Then there exists an orthonormal family $\mathbf{w}_1, \ldots, \mathbf{w}_k$
+        Then there exists an orthonormal family $\vec{w}_1, \ldots, \vec{w}_k$
         with the property that for all $1 \leq i \leq k$
         \[
-            \mathbf{w}_i \in \mathbb{R}_{<0} \ \mathbf{v}_i +
-            \langle \mathbf{v}_{i-1}, \ldots, \mathbf{v}_1 \rangle
+            \vec{w}_i \in \mathbb{R}_{<0} \ \vec{v}_i +
+            \langle \vec{v}_{i-1}, \ldots, \vec{v}_1 \rangle
         \]
 
     \item \textbf{Gram-Schmidt process}
         \begin{align*}{}
-            \mathbf{u}_1 &= \mathbf{v}_1, & \mathbf{e}_1
-                         &= \frac{\mathbf{u}_1}{\lVert \mathbf{u}_1 \rVert} \\
-            \mathbf{u}_2 &= \mathbf{v}_2 - \pi_{\mathbf{u}_1}(\mathbf{v}_2), & \mathbf{e}_2
-                         &= \frac{\mathbf{u}_2}{\lVert \mathbf{u}_2 \rVert} \\
-            \mathbf{u}_3 &= \mathbf{v}_3 - \pi_{\mathbf{u}_1}(\mathbf{v}_3) -
-            \pi_{\mathbf{u}_2}(\mathbf{v}_3), & \mathbf{e}_3 &=
-            \frac{\mathbf{u}_3}{\lVert \mathbf{u}_3 \rVert} \\
+            \vec{u}_1 &= \vec{v}_1, & \vec{e}_1
+                         &= \frac{\vec{u}_1}{\lVert \vec{u}_1 \rVert} \\
+            \vec{u}_2 &= \vec{v}_2 - \pi_{\vec{u}_1}(\vec{v}_2), & \vec{e}_2
+                         &= \frac{\vec{u}_2}{\lVert \vec{u}_2 \rVert} \\
+            \vec{u}_3 &= \vec{v}_3 - \pi_{\vec{u}_1}(\vec{v}_3) -
+            \pi_{\vec{u}_2}(\vec{v}_3), & \vec{e}_3 &=
+            \frac{\vec{u}_3}{\lVert \vec{u}_3 \rVert} \\
                                               & \ \vdots & & \ \vdots \\
-            \mathbf{u}_k &= \mathbf{v}_k - \sum_{j=1}^{k-1} \pi_{\mathbf{u}_j} (\mathbf{v}_k),
-                         & \mathbf{e}_k &= \frac{\mathbf{u}_k}{\lVert \mathbf{u}_k \rVert}
+            \vec{u}_k &= \vec{v}_k - \sum_{j=1}^{k-1} \pi_{\vec{u}_j} (\vec{v}_k),
+                         & \vec{e}_k &= \frac{\vec{u}_k}{\lVert \vec{u}_k \rVert}
         \end{align*}
 
 \end{itemize}
@@ -1765,6 +1779,14 @@
         $A$.
 
 \end{itemize}
+
+\break{}
+
+\section{Jordan Normal Form}
+
+\subsection{Motivation}
+
+\break{}
 
 \section{Reference}
 
