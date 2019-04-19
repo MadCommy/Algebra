@@ -530,14 +530,14 @@
         \]
         This produces a bijection, which is even an isomorphism of vector spaces
         \begin{align*}{}
-            \mathrm{M}_\mathcal{B}^\mathcal{A} : \mathrm{Hom}_F(V,W) &\to
+            \mathrm{M}_\mathcal{B}^\mathcal{A} : \mathrm{Hom}_F(V,W) & \tilde{\to}
             \mathrm{Mat}(n \times m; F) \\
             f &\mapsto _\mathcal{B}{[f]}_\mathcal{A}
         \end{align*}
 
     \item \textbf{Theorem 2.3.2} The representing matrix of a composition of linear mappings \\
         Let $F$ be a field and $U, V, W$ finite-dimensional vector spaces over $F$ with ordered
-        bases $\mathcal{A, B, C}$
+        bases $\mathcal{A, B, C}$.
         If $f : U \to V$ and $g : V \to W$ are linear mappings,
         then the representing  matrix of the composition
         $g \circ f : U \to W$
@@ -552,7 +552,7 @@
         $\mathcal{A} = (\vec{v}_1, \ldots, \vec{v}_m)$
         We denote the inverse to the bijection
         $\Phi_\mathcal{A} : F^m \to V, {(\alpha_1, \ldots, \alpha_m)}^T \mapsto
-        \alpha_1\vec{v}_1 + \cdots + \alpha_m\vec{v}m$ by
+        \alpha_1\vec{v}_1 + \cdots + \alpha_m\vec{v}_m$ by
         \[
             \vec{v} \mapsto _\mathcal{A}[\vec{v}]
         \]
@@ -686,7 +686,7 @@
             \item $(-a)(-b) = ab$
         \end{enumerate}
 
-    \item \textbf{Definition 3.2.3} \\
+    \item \textbf{Definition 3.2.3} \emph{Multiple of an element} \\
         Let $m \in \mathbb{Z}$.
         The \emph{$m$-th multiple $ma$ of an element} a in abelian group $R$ is
         \[
@@ -735,7 +735,7 @@
 
 \begin{itemize}
 
-    \item \textbf{Definition 3.1.1} \\
+    \item \textbf{Definition 3.3.1} \emph{Polynomials over rings} \\
         Let $R$ be a ring.
         A \emph{polynomial over} $R$ is an expression of the form
         \[
@@ -865,9 +865,9 @@
         Let $R$ be a commutative ring and let $T \subseteq R$.
         Then $_R \langle T \rangle$ is the smallest ideal of $R$ that contains $T$.
 
-    \item \textbf{Definition 3.4.15} \emph{Principle ideal} \\
+    \item \textbf{Definition 3.4.15} \emph{Principal ideal} \\
         Let $R$ be a commutative ring.
-        An ideal $I \trianglelefteq R$ is called a \emph{principle ideal} if
+        An ideal $I \trianglelefteq R$ is called a \emph{principal ideal} if
         $I = \langle t \rangle$ for some $t \in R$.
 
     \item \textbf{Definition 3.4.17} \emph{Kernel} \\
@@ -1806,5 +1806,40 @@
 Ring  = (Group, Monoid)
 
 Field = (Group, Group)
+
+\subsection{Morphisms}
+
+\begin{itemize}
+
+    \item \emph{Linear Mapping} \\
+        Where $V, W$ are vector spaces: \\
+        A linear mapping is a mapping $f : V \to W$ where the following hold:
+        \begin{align*}{}
+            f(\vec{v}_1 + \vec{v}_2) & = f(\vec{v}_1) + f(\vec{v}_2) \\
+            f(\lambda \vec{v}_1)     & = \lambda f(\vec{v}_1)
+        \end{align*}
+    \item \emph{Bi-linear forms} \\
+        Where $U, V, W$ are vector spaces: \\
+        A bi-linear form is a mapping $f : U \times V \to W$ where the following hold:
+        \begin{align*}
+            f(u_1 + u_2, v_1)   & = f(u_1, v_1) + f(u_2, v_1) \\
+            f(\lambda u_1, v_1) & = \lambda f(u_1, v_1)
+        \end{align*}
+        and again for the second parameter.
+    \item \emph{Homomorphism} \\
+        Where $A, B$ are groups or rings: \\
+        A homomorphism is a mapping $f : A \to B$ where the following hold:
+        \begin{align*}{}
+            f(x + y) & = f(x) + f(y) \\
+            f(xy)    & = f(x) f(y)
+        \end{align*}
+    \item \emph{Isomorphism} \\
+        A bijective homomorphism.
+    \item \emph{Endomorphism} \\
+        A homomorphism from a set to itself.
+    \item \emph{Automorphism} \\
+        A isomorphism from a set to itself.
+
+\end{itemize}
 
 \end{document}
